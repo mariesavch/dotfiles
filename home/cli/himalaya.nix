@@ -1,7 +1,7 @@
 { ... }: {
   accounts.email.accounts.marie = {
     primary = true;
-    userName = "marie";
+    userName = "mariesavch";
     realName = "Marie Savchenko";
     address = "mariesavch@icloud.com";
     passwordCommand = "cat /var/secrets/mail";
