@@ -93,6 +93,9 @@
             lib.getExe pkgs.grim
           } -c ~/pictures/screenshots/$(date "+%Y%m%d"_"%Hh%Mm%Ss"_grim).png '';
 
+        "${mod}+u" = "exec ${pkgs.comodoro}/bin/comodoro start pomodoro tcp";
+        "${mod}+i" = "exec ${pkgs.comodoro}/bin/comodoro stop pomodoro tcp";
+
         "${mod}+Return" = "exec wezterm";
         "${mod}+d" = "exec firefox";
 
