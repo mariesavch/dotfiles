@@ -75,7 +75,7 @@
         tooltip = false;
       };
       "custom/comodoro" = {
-        exec = "${pkgs.comodoro}/bin/comodoro get pomodoro tcp";
+        exec = "${pkgs.comodoro}/bin/comodoro get pomodoro tcp | sed 's/OFF//'";
         interval = 1;
         format = "<span text-transform='lowercase'>{}</span>";
         tooltip = false;
