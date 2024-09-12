@@ -4,7 +4,6 @@
     settings.General.EnableNetworkConfiguration = true;
   };
   networking.firewall.allowedTCPPorts = [ 3000 9999 ];
-  networking.wg-quick.interfaces.wg0.configFile = "/var/secrets/wg0.conf";
   networking.extraHosts = ''
     0.0.0.0 youtube.com
     0.0.0.0 www.youtube.com
