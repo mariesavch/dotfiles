@@ -1,32 +1,8 @@
-{ pkgs, colors, inputs, ... }: {
+{ colors, inputs, ... }: {
   programs.firefox = {
     enable = true;
-    package =
-      inputs.nixpkgs-old.legacyPackages."aarch64-linux".firefox.override {
-        nativeMessagingHosts = [ pkgs.tridactyl-native ];
-      };
+    package = inputs.nixpkgs-old.legacyPackages."aarch64-linux".firefox;
   };
-  xdg.configFile."tridactyl/tridactylrc".text = ''
-    set noiframe true
-    set modeindicator false
-    set hintchars etovxqpdygfblzhckisuran
-    set hintuppercase false
-    unbind w
-    unbind W
-    unbind t
-    unbind T
-    unbind s
-    unbind S
-    unbind p
-    unbind P
-    unbind o
-    unbind O
-    unbind b
-    unbind B
-    unbind :
-    unbind <c-f>
-    unbind <c-i>
-  '';
   programs.firefox.profiles = let
     userChrome = ''
       :root {
@@ -258,10 +234,6 @@
       :root {
         scrollbar-width: none !important;
 
-        --tridactyl-hint-active-fg: var(--tridactyl-hint-fg) !important;
-        --tridactyl-hint-active-bg: var(--tridactyl-hint-bg) !important;
-        --tridactyl-hint-active-outline: var(--tridactyl-hint-outline) !important;
-        --tridactyl-hintspan-font-family: CartographCF Nerd Font !important;
       }
       @-moz-document url(about:privatebrowsing) {
         :root {
@@ -906,11 +878,9 @@
       extensions = with inputs.firefox-addons.packages."aarch64-linux"; [
         amp2html
         ublock-origin
-        privacy-redirect
         clearurls
         decentraleyes
         stylus
-        tridactyl
         istilldontcareaboutcookies
       ];
     };

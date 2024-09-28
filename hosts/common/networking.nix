@@ -5,10 +5,6 @@
   };
   networking.firewall.allowedTCPPorts = [ 3000 9999 ];
   networking.extraHosts = ''
-    0.0.0.0 youtube.com
-    0.0.0.0 www.youtube.com
-    0.0.0.0 reddit.com
-    0.0.0.0 www.reddit.com
     0.0.0.0 ufanet.ru
     0.0.0.0 www.ufanet.ru
     0.0.0.0 mail.ru
