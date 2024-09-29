@@ -836,16 +836,6 @@
             }];
             definedAliases = [ "nhm" ];
           };
-          iv = {
-            urls =
-              [{ template = "https://iv.nboeck.de/search?q={searchTerms}"; }];
-            definedAliases = [ "iv" ];
-          };
-          lr = {
-            urls =
-              [{ template = "https://reddit.simo.sh/search?q={searchTerms}"; }];
-            definedAliases = [ "lr" ];
-          };
           wiki = {
             urls = [{
               template =
