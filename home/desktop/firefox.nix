@@ -170,6 +170,29 @@
         border: 1px solid rgba(0, 0, 0, 0) !important;
         border-radius: 0!important;
       }
+      #urlbar-input {
+          background-color: #${colors.mantle} !important;
+          outline: none !important;
+          border: none !important;
+      }
+      #urlbar-background { border: transparent !important; }
+      #urlbar[focused='true']
+      > #urlbar-background,
+      #urlbar:not([open])
+      > #urlbar-background { background: #${colors.mantle} !important; }
+      #urlbar, #urlbar * {
+         outline: none !important;
+         box-shadow: none !important;
+      }
+
+          #urlbar[open]
+          > #urlbar-background { background: #${colors.mantle}!important; }
+
+
+        .urlbarView-row:hover
+          > .urlbarView-row-inner,
+        .urlbarView-row[selected]
+          > .urlbarView-row-inner { background: #${colors.mantle} !important; }
       #urlbar-container {
         margin-left: 8px !important;
       }
@@ -182,7 +205,7 @@
       .titlebar-buttonbox-container { 
         display: none !important;
       }
-      #urlbar-go-button {
+      #urlbar-go-button, .urlbar-go-button {
         display: none !important;
       }
       #alltabs-button {
