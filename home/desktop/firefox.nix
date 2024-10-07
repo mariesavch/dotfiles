@@ -1,7 +1,7 @@
-{ colors, inputs, ... }: {
+{ pkgs, colors, inputs, ... }: {
   programs.firefox = {
     enable = true;
-    package = inputs.nixpkgs-old.legacyPackages."aarch64-linux".firefox;
+    package = pkgs.firefox;
   };
   programs.firefox.profiles = let
     userChrome = ''
@@ -804,7 +804,7 @@
     home = {
       id = 0;
       search = {
-        default = "4get";
+        default = "ddg";
         force = true;
         engines = {
           "4get" = {

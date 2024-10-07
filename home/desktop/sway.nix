@@ -122,6 +122,10 @@
         "${mod}+XF86MonBrightnessUp" =
           "exec ${lib.getExe pkgs.brightnessctl} s 1%+";
 
+        "XF86LaunchA" = "exec yeelight 192.168.88.227 adjust bright decrease";
+        "XF86Search" = "exec yeelight 192.168.88.227 adjust bright increase";
+        "XF86AudioRecord" = "exec yeelight 192.168.88.227 toggle";
+
         "${mod}+q" = "kill";
         "${mod}+r" = ''mode "resize"'';
         "${mod}+h" = "focus left";

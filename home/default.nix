@@ -1,4 +1,4 @@
-{ pkgs, config, ... }: {
+{ pkgs, inputs, config, ... }: {
   imports = [
     ./cli/git.nix
     ./cli/fish.nix
@@ -12,7 +12,16 @@
     ./desktop/waybar.nix
   ];
   home.stateVersion = "21.11";
-  home.packages = with pkgs; [ ripgrep wezterm fd nodejs bun cargo rustc gcc ];
+  home.packages = with pkgs; [
+    inputs.wezterm.packages.${pkgs.system}.default
+    ripgrep
+    fd
+    nodejs
+    bun
+    cargo
+    rustc
+    gcc
+  ];
   xdg.configFile."wezterm" = {
     source = config.lib.file.mkOutOfStoreSymlink
       "/home/marie/.dotfiles/configs/wezterm";
