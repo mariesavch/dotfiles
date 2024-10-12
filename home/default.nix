@@ -15,6 +15,7 @@
   home.packages = with pkgs; [
     inputs.wezterm.packages.${pkgs.system}.default
     ripgrep
+    nh
     fd
     nodejs
     bun

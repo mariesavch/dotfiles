@@ -54,9 +54,7 @@
       };
       startup = [{
         command = ''
-          ${lib.getExe pkgs.swayidle} -w \
-            timeout 180 'swaylock -f' \
-            before-sleep 'swaylock -f'
+          ${lib.getExe pkgs.swayidle} -w timeout 1800 'swaylock -f'
         '';
         always = true;
       }];

@@ -52,7 +52,9 @@
       ":q" = "exit";
       ":h" = "man";
       mkdir = "mkdir -p";
-      nr = "sudo nixos-rebuild switch --flake ~/.dotfiles#kitaro";
+      nr = "nh os switch ~/.dotfiles";
+      ns = "nh search";
+      ng = "nh clean all";
       c = "clear";
       g = "git";
     };
