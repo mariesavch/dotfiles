@@ -97,7 +97,8 @@
         "${mod}+Return" = "exec wezterm";
         "${mod}+d" = "exec firefox";
 
-        "XF86AudioMute" = "exec amixer sset Master toggle";
+        "XF86AudioMute" =
+          "exec ${pkgs.alsa-utils}/bin/amixer sset Master toggle";
         "XF86AudioRaiseVolume" =
           "exec ${pkgs.alsa-utils}/bin/amixer sset Master 5%+";
         "XF86AudioLowerVolume" =
