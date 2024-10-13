@@ -31,6 +31,7 @@
   security.sudo.wheelNeedsPassword = false;
 
   services = {
+    logind.powerKey = "ignore";
     upower.enable = true;
     fstrim.enable = true;
     timesyncd.enable = true;

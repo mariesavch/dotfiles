@@ -53,8 +53,7 @@
       ":h" = "man";
       mkdir = "mkdir -p";
       nr = "sudo nixos-rebuild switch --flake ~/.dotfiles#kitaro";
-      ns = "nh search";
-      ng = "nh clean all";
+      ns = "${lib.getExe pkgs.nh} search";
       c = "clear";
       g = "git";
     };

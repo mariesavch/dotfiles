@@ -52,12 +52,6 @@
           pointer_accel = "0.47";
         };
       };
-      startup = [{
-        command = ''
-          ${lib.getExe pkgs.swayidle} -w timeout 1800 'swaylock -f'
-        '';
-        always = true;
-      }];
       bars = [{
         position = "top";
         command = "waybar";
@@ -73,7 +67,6 @@
         }) (lib.range 1 9));
       in tagBinds // {
         "${mod}+o" = "exec ${lib.getExe pkgs.hyprpicker} -a -n";
-        "${mod}+0" = "exec swaylock -f";
 
         "${mod}+p" = ''
           exec ${lib.getExe pkgs.grim} -g "$(${
@@ -160,37 +153,6 @@
         "*".bg = "#${colors.mantle} solid_color";
         "eDP-1".scale = "1";
       };
-    };
-  };
-  programs.swaylock = {
-    enable = true;
-    settings = {
-      no-unlock-indicator = false;
-      disable-caps-lock-text = true;
-      hide-keyboard-layout = true;
-      ignore-empty-password = true;
-      indicator-thickness = 0;
-      color = "${colors.crust}";
-      text-color = "${colors.crust}";
-      text-clear-color = "${colors.crust}";
-      text-caps-lock-color = "${colors.crust}";
-      text-ver-color = "${colors.crust}";
-      text-wrong-color = "${colors.red}";
-      inside-wrong-color = "${colors.red}";
-      inside-color = "${colors.crust}";
-      inside-clear-color = "${colors.crust}";
-      inside-caps-lock-color = "${colors.crust}";
-      inside-ver-color = "${colors.crust}";
-      line-wrong-color = "${colors.red}";
-      line-color = "${colors.crust}";
-      line-clear-color = "${colors.crust}";
-      line-caps-lock-color = "${colors.crust}";
-      line-ver-color = "${colors.crust}";
-      ring-wrong-color = "${colors.red}";
-      ring-color = "${colors.crust}";
-      ring-clear-color = "${colors.crust}";
-      ring-caps-lock-color = "${colors.crust}";
-      ring-ver-color = "${colors.crust}";
     };
   };
 }
