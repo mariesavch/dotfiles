@@ -33,6 +33,7 @@ require("lazy").setup({
   { import = "v.plugins.conform" },
   { import = "v.plugins.himalaya" },
   { import = "v.plugins.crates" },
+  { import = "v.plugins.minty" },
 }, {
   defaults = {
     lazy = true,
