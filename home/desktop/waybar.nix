@@ -18,14 +18,8 @@
       height = 68;
       modules-left = [ "sway/workspaces" ];
       modules-center = [ ];
-      modules-right = [
-        "custom/comodoro"
-        "sway/language"
-        "wireplumber"
-        "backlight"
-        "battery"
-        "clock"
-      ];
+      modules-right =
+        [ "sway/language" "wireplumber" "backlight" "battery" "clock" ];
       "sway/workspaces" = {
         disable-scroll = true;
         disable-click = true;
@@ -72,12 +66,6 @@
       "sway/language" = {
         format =
           "<span font_desc='CartographCF Nerd Font Heavy Italic' color='#${colors.mauve}'>{}</span>";
-        tooltip = false;
-      };
-      "custom/comodoro" = {
-        exec = "${pkgs.comodoro}/bin/comodoro get pomodoro tcp | sed 's/OFF//'";
-        interval = 1;
-        format = "<span text-transform='lowercase'>{}</span>";
         tooltip = false;
       };
       spacing = 30;
