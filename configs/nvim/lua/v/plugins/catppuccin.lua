@@ -115,6 +115,7 @@ return {
             NoiceLspProgressClient = { fg = colors.blue, style = { "italic", "bold" } },
             NoiceCmdlinePopup = { bg = colors.mantle },
             NoiceCmdlinePopupBorder = { bg = colors.mantle, fg = colors.mantle },
+            NoiceCmdlinePopupBorderSearch = { bg = colors.mantle, fg = colors.mantle },
 
             Todo = { fg = colors.mauve, bg = colors.none, style = { "bold" } },
             ["@comment.error"] = { fg = colors.red, bg = colors.none, style = { "bold" } },

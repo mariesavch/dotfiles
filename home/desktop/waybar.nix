@@ -18,8 +18,14 @@
       height = 68;
       modules-left = [ "sway/workspaces" ];
       modules-center = [ ];
-      modules-right =
-        [ "sway/language" "wireplumber" "backlight" "battery" "clock" ];
+      modules-right = [
+        "custom/weather"
+        "sway/language"
+        "wireplumber"
+        "backlight"
+        "battery"
+        "clock"
+      ];
       "sway/workspaces" = {
         disable-scroll = true;
         disable-click = true;
@@ -56,16 +62,26 @@
           "<span font_desc='CartographCF Nerd Font Heavy Italic' color='#${colors.mauve}'>vol</span> {volume}%";
         format-muted =
           "<span font_desc='CartographCF Nerd Font Heavy Italic' color='#${colors.mauve}'>vol</span> muted";
+        on-scroll-up = "";
+        on-scroll-down = "";
         tooltip = false;
       };
       backlight = {
         format =
           "<span font_desc='CartographCF Nerd Font Heavy Italic' color='#${colors.mauve}'>bri</span> {percent}%";
+        on-scroll-up = "";
+        on-scroll-down = "";
         tooltip = false;
       };
       "sway/language" = {
         format =
           "<span font_desc='CartographCF Nerd Font Heavy Italic' color='#${colors.mauve}'>{}</span>";
+        tooltip = false;
+      };
+      "custom/weather" = {
+        exec = "weather-status";
+        restart-interval = 3600;
+        format = "{}";
         tooltip = false;
       };
       spacing = 30;
