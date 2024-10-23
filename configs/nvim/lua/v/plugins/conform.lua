@@ -22,9 +22,15 @@ return {
       fish = { "fish_indent" },
       lua = { "stylua" },
       nix = { "nixfmt" },
+      rust = { "rustfmt", "dxfmt" },
     },
     formatters = {
       injected = { options = { ignore_errors = true } },
+      dxfmt = {
+        command = "dx",
+        args = { "fmt", "-f", "-" },
+        stdin = true,
+      },
     },
     format_on_save = {
       timeout_ms = 500,

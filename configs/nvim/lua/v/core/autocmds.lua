@@ -23,3 +23,12 @@ autocmd({ "VimResized" }, {
     vim.cmd("tabdo wincmd =")
   end,
 })
+
+local rust_group = vim.api.nvim_create_augroup("rust_group", {})
+autocmd({ "FileType" }, {
+  pattern = "rust",
+  callback = function()
+    vim.opt_local.backupcopy = "yes"
+  end,
+  group = rust_group,
+})

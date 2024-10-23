@@ -27,7 +27,7 @@
     };
   };
 
-  security.pam.services.swaylock = { };
+  security.pam.services.waylock = { };
   security.sudo.wheelNeedsPassword = false;
 
   services = {

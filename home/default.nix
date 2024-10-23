@@ -17,8 +17,11 @@
     fd
     nodejs
     bun
-    cargo
-    rustc
+    # rust dev
+    rustup
+    pkg-config
+    gnumake
+    lld_19
     gcc
   ];
   xdg.configFile."wezterm" = {

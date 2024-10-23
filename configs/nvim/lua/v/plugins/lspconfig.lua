@@ -104,16 +104,43 @@ return {
 
     lspconfig.tailwindcss.setup({
       capabilities = capabilities,
-      root_dir = lspconfig.util.root_pattern(
-        "tailwind.config.js",
-        "tailwind.config.cjs",
-        "tailwind.config.mjs",
-        "tailwind.config.ts",
-        "postcss.config.js",
-        "postcss.config.cjs",
-        "postcss.config.mjs",
-        "postcss.config.ts"
-      ),
+      filetypes = {
+        "astro",
+        "astro-markdown",
+        "html",
+        "markdown",
+        "mdx",
+        "css",
+        "less",
+        "postcss",
+        "sass",
+        "scss",
+        "stylus",
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "vue",
+        "svelte",
+        "rust",
+        "rstml",
+        "rust_with_rstml",
+      },
+      init_options = {
+        userLanguages = {
+          rust = "html",
+        },
+      },
+      settings = {
+        tailwindCSS = {
+          experimental = {
+            classRegex = {
+              'class: "(.*)"',
+              'class:"(.*)"',
+            },
+          },
+        },
+      },
     })
 
     lspconfig.jsonls.setup({

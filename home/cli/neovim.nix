@@ -12,7 +12,6 @@
       lua-language-server
 
       rust-analyzer
-      rustfmt
 
       tailwindcss-language-server
       nodePackages.typescript

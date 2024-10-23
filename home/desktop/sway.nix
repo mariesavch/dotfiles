@@ -1,6 +1,6 @@
 { pkgs, lib, colors, ... }: {
   home = {
-    packages = with pkgs; [ wf-recorder wl-clipboard xdg-utils ];
+    packages = with pkgs; [ wf-recorder wl-clipboard xdg-utils waylock ];
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
       DISABLE_QT5_COMPAT = "0";
@@ -16,7 +16,10 @@
       XCURSOR_SIZE = "24";
     };
   };
-  wayland.windowManager.sway = {
+  wayland.windowManager.sway = let
+    waylock =
+      "waylock -ignore-empty-password -fail-color 0xff8389 -init-color 0x000000 -input-color 0x161616";
+  in {
     enable = true;
     package = pkgs.sway-unwrapped.override {
       enableXWayland = false;
@@ -52,6 +55,14 @@
           pointer_accel = "0.47";
         };
       };
+      startup = [{
+        command = ''
+          ${lib.getExe pkgs.swayidle} -w \
+            timeout 180 '${waylock}' \
+            before-sleep '${waylock}'
+        '';
+        always = true;
+      }];
       bars = [{
         position = "top";
         command = "waybar";
@@ -67,6 +78,7 @@
         }) (lib.range 1 9));
       in tagBinds // {
         "${mod}+o" = "exec ${lib.getExe pkgs.hyprpicker} -a -n";
+        "${mod}+0" = "exec ${waylock}";
 
         "${mod}+p" = ''
           exec ${lib.getExe pkgs.grim} -g "$(${
@@ -154,5 +166,10 @@
         "eDP-1".scale = "1";
       };
     };
+    extraConfig = ''
+      bindswitch lid:on exec sleep 4 && ${
+        lib.getExe pkgs.ffmpeg_7-headless
+      } -f v4l2 -s 640x480 -i /dev/video0 -ss 0:0:1 -frames 1 ~/pictures/shots/lid-$(date "+%Y%m%d"_"%Hh%Mm%Ss").jpg
+    '';
   };
 }
