@@ -1,5 +1,5 @@
 return {
-  "https://git.sr.ht/~soywod/himalaya-vim",
+  "pimalaya/himalaya-vim",
   dependencies = { "nvim-telescope/telescope.nvim" },
   lazy = true,
   keys = {

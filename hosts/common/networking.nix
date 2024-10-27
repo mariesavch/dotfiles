@@ -3,7 +3,7 @@
     enable = true;
     settings.General.EnableNetworkConfiguration = true;
   };
-  networking.firewall.allowedTCPPorts = [ 3000 9999 ];
+  networking.firewall.allowedTCPPorts = [ 3000 8080 ];
   networking.extraHosts = ''
     0.0.0.0 ufanet.ru
     0.0.0.0 www.ufanet.ru

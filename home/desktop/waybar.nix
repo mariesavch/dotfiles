@@ -18,14 +18,8 @@
       height = 68;
       modules-left = [ "sway/workspaces" ];
       modules-center = [ ];
-      modules-right = [
-        "custom/weather"
-        "sway/language"
-        "wireplumber"
-        "backlight"
-        "battery"
-        "clock"
-      ];
+      modules-right =
+        [ "sway/language" "wireplumber" "backlight" "battery" "clock" ];
       "sway/workspaces" = {
         disable-scroll = true;
         disable-click = true;
@@ -76,12 +70,6 @@
       "sway/language" = {
         format =
           "<span font_desc='CartographCF Nerd Font Heavy Italic' color='#${colors.mauve}'>{}</span>";
-        tooltip = false;
-      };
-      "custom/weather" = {
-        exec = "weather-status";
-        restart-interval = 3600;
-        format = "{}";
         tooltip = false;
       };
       spacing = 30;
