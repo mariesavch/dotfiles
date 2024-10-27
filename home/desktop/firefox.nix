@@ -568,6 +568,7 @@
       "browser.urlbar.trimURLs" = false;
       "browser.warnOnQuitShortcut" = false;
       "browser.display.background_color.dark" = "#${colors.base}";
+      "browser.display.background_color" = "#${colors.base}";
       "browser.toolbars.bookmarks.visibility" = "never";
       "datareporting.healthreport.service.enabled" = false;
       "datareporting.healthreport.uploadEnabled" = false;

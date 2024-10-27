@@ -18,7 +18,7 @@
   };
   wayland.windowManager.sway = let
     waylock =
-      "waylock -ignore-empty-password -fail-color 0xff8389 -init-color 0x000000 -input-color 0x161616";
+      "waylock -ignore-empty-password -fail-color 0x${colors.red} -init-color 0x000000 -input-color 0x${colors.mantle}";
   in {
     enable = true;
     package = pkgs.sway-unwrapped.override {
