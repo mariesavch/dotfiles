@@ -16,10 +16,7 @@
       XCURSOR_SIZE = "24";
     };
   };
-  wayland.windowManager.sway = let
-    waylock =
-      "waylock -ignore-empty-password -fail-color 0x${colors.red} -init-color 0x000000 -input-color 0x${colors.mantle}";
-  in {
+  wayland.windowManager.sway = {
     enable = true;
     package = pkgs.sway-unwrapped.override {
       enableXWayland = false;
@@ -55,14 +52,6 @@
           pointer_accel = "0.47";
         };
       };
-      startup = [{
-        command = ''
-          ${lib.getExe pkgs.swayidle} -w \
-            timeout 180 '${waylock}' \
-            before-sleep '${waylock}'
-        '';
-        always = true;
-      }];
       bars = lib.mkForce [ ];
       defaultWorkspace = "workspace 1";
       keybindings = let
@@ -75,7 +64,6 @@
         }) (lib.range 1 9));
       in tagBinds // {
         "${mod}+o" = "exec ${lib.getExe pkgs.hyprpicker} -a -n";
-        "${mod}+0" = "exec ${waylock}";
 
         "${mod}+p" = ''
           exec ${lib.getExe pkgs.grim} -g "$(${

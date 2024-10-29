@@ -28,7 +28,6 @@
     };
   };
 
-  security.pam.services.waylock = { };
   security.sudo.wheelNeedsPassword = false;
 
   services = {
@@ -43,7 +42,7 @@
 
   boot.loader = {
     systemd-boot.enable = true;
-    timeout = 2;
+    timeout = 0;
   };
 
   zramSwap = {

@@ -37,7 +37,6 @@
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "cf48d4dfce44e0b9a2e19a008d6ec6ea6f01a83b" },
   "telescope.nvim": { "branch": "master", "commit": "85922dde3767e01d42a08e750a773effbffaea3e" },
   "treesj": { "branch": "main", "commit": "0d81326b5afd36babe7dd480aabbb0b05f33e688" },
-  "ts-error-translator.nvim": { "branch": "main", "commit": "3bd23c4cfe4c2edc99278e01b75cdb2a26f03152" },
   "typescript-tools.nvim": { "branch": "master", "commit": "f8c2e0b36b651c85f52ad5c5373ff8b07adc15a7" },
   "volt": { "branch": "main", "commit": "4472da2e77ad240e7fc56af6357b2a8fdf6aa0ae" },
   "which-key.nvim": { "branch": "main", "commit": "0539da005b98b02cf730c1d9da82b8e8edb1c2d2" }
