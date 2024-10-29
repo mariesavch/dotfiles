@@ -79,6 +79,7 @@ return {
         lsp_trouble = true,
         dashboard = false,
         hop = true,
+        neogit = true,
         nvimtree = false,
         native_lsp = {
           enabled = true,

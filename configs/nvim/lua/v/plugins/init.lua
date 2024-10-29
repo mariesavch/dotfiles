@@ -34,6 +34,7 @@ require("lazy").setup({
   { import = "v.plugins.himalaya" },
   { import = "v.plugins.crates" },
   { import = "v.plugins.minty" },
+  { import = "v.plugins.neogit" },
 }, {
   defaults = {
     lazy = true,
