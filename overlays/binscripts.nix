@@ -61,4 +61,20 @@ final: prev: {
         -t 888 \
         -u low
   '';
+
+  theme = prev.writeShellScriptBin "th" ''
+        if grep -q "colors = themes.light;" ~/.dotfiles/flake.nix; then
+          echo -e "\e[1;32mswitch to dark"
+          sed -i -e 's/theme.colors = themes.light/theme.colors = themes.dark/' ~/.dotfiles/configs/wezterm/theme.lua
+          sed -i -e 's/vim.opt.background = "light"/vim.opt.background = "dark"/' ~/.dotfiles/configs/nvim/lua/v/core/options.lua
+          sed -i -e 's/colors = themes.light;/colors = themes.dark;/' ~/.dotfiles/flake.nix
+          sudo nixos-rebuild switch --flake ~/.dotfiles#kitaro
+    else
+          echo -e "\e[1;32mswitch to light"
+          sed -i -e 's/theme.colors = themes.dark/theme.colors = themes.light/' ~/.dotfiles/configs/wezterm/theme.lua
+          sed -i -e 's/vim.opt.background = "dark"/vim.opt.background = "light"/' ~/.dotfiles/configs/nvim/lua/v/core/options.lua
+          sed -i -e 's/colors = themes.dark;/colors = themes.light;/' ~/.dotfiles/flake.nix
+          sudo nixos-rebuild switch --flake ~/.dotfiles#kitaro
+    fi
+  '';
 }

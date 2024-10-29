@@ -17,6 +17,7 @@
     fd
     nodejs
     bun
+    theme
     # rust dev
     rustup
     pkg-config
