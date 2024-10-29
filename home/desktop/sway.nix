@@ -63,10 +63,7 @@
         '';
         always = true;
       }];
-      bars = [{
-        position = "top";
-        command = "waybar";
-      }];
+      bars = lib.mkForce [ ];
       defaultWorkspace = "workspace 1";
       keybindings = let
         mod = "Mod4";
@@ -99,29 +96,32 @@
         "${mod}+Return" = "exec wezterm";
         "${mod}+d" = "exec firefox";
 
-        "XF86AudioMute" =
-          "exec ${pkgs.alsa-utils}/bin/amixer sset Master toggle";
+        "${mod}+n" = "exec ${pkgs.notifystatus}/bin/notifystatus";
+
+        "XF86AudioMute" = "exec ${pkgs.volume}/bin/volume sset Master toggle";
         "XF86AudioRaiseVolume" =
-          "exec ${pkgs.alsa-utils}/bin/amixer sset Master 5%+";
+          "exec ${pkgs.volume}/bin/volume sset Master 5%+";
         "XF86AudioLowerVolume" =
-          "exec ${pkgs.alsa-utils}/bin/amixer sset Master 5%-";
+          "exec ${pkgs.volume}/bin/volume sset Master 5%-";
 
         "${mod}+XF86AudioRaiseVolume" =
-          "exec ${pkgs.alsa-utils}/bin/amixer sset Master 1%+";
+          "exec ${pkgs.volume}/bin/volume sset Master 1:+";
         "${mod}+XF86AudioLowerVolume" =
-          "exec ${pkgs.alsa-utils}/bin/amixer sset Master 1%-";
+          "exec ${pkgs.volume}/bin/volume sset Master 1%-";
 
         "XF86AudioNext" = "exec ${lib.getExe pkgs.playerctl} next";
         "XF86AudioPrev" = "exec ${lib.getExe pkgs.playerctl} previous";
         "XF86AudioPlay" = "exec ${lib.getExe pkgs.playerctl} play-pause";
 
-        "XF86MonBrightnessDown" = "exec ${lib.getExe pkgs.brightnessctl} s 5%-";
-        "XF86MonBrightnessUp" = "exec ${lib.getExe pkgs.brightnessctl} s 5%+";
+        "XF86MonBrightnessDown" =
+          "exec ${pkgs.brightness}/bin/brightness set 5%-";
+        "XF86MonBrightnessUp" =
+          "exec ${pkgs.brightness}/bin/brightness set 5%+";
 
         "${mod}+XF86MonBrightnessDown" =
-          "exec ${lib.getExe pkgs.brightnessctl} s 1%-";
+          "exec ${pkgs.brightness}/bin/brightness set 1%-";
         "${mod}+XF86MonBrightnessUp" =
-          "exec ${lib.getExe pkgs.brightnessctl} s 1%+";
+          "exec ${pkgs.brightness}/bin/brightness set 1%+";
 
         "XF86LaunchA" = "exec yeelight 192.168.88.227 adjust bright decrease";
         "XF86Search" = "exec yeelight 192.168.88.227 adjust bright increase";
