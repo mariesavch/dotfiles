@@ -252,6 +252,37 @@
       .infobar::before {
         display: none !important;
       }
+      :root:not([inFullscreen]){
+        --uc-bottom-toolbar-height: calc(39px + var(--toolbarbutton-outer-padding) )
+      }
+
+      :root[uidensity="compact"]:not([inFullscreen]){
+        --uc-bottom-toolbar-height: calc(32px + var(--toolbarbutton-outer-padding) )
+      }
+
+      #browser,
+      #customization-container{ margin-bottom: var(--uc-bottom-toolbar-height,0px) }
+
+      #nav-bar{
+        position: fixed !important;
+        bottom: 0px;
+        display: -webkit-box;
+        width: 100%;
+        z-index: 1;
+      }
+      #nav-bar-customization-target{ -webkit-box-flex: 1; }
+
+      .panel-viewstack{ max-height: unset !important; }
+
+      #urlbar[breakout][breakout-extend]{
+        display: flex !important;
+        flex-direction: column-reverse;
+        bottom: 0px !important;
+        top: auto !important;
+      }
+
+      .urlbarView-body-inner{ border-top-style: none !important; }
+      #TabsToolbar {display: none !important;}
     '';
     userContent = ''
       :root {
