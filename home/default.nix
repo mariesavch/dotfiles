@@ -15,6 +15,7 @@
     inputs.wezterm.packages.${pkgs.system}.default
     ripgrep
     fd
+    xq
     nodejs
     bun
     theme

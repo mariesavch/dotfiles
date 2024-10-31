@@ -54,6 +54,7 @@
       mkdir = "mkdir -p";
       nr = "sudo nixos-rebuild switch --flake ~/.dotfiles#kitaro";
       ns = "${lib.getExe pkgs.nh} search";
+      ipinfo = "curl -s ipinfo.io | xq";
       c = "clear";
       g = "git";
     };
