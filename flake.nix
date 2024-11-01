@@ -2,7 +2,7 @@
   description = "Nix Environment";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     nixos-apple-silicon = {
       url = "github:tpwrules/nixos-apple-silicon";
@@ -10,10 +10,6 @@
     };
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    wezterm = {
-      url = "github:wez/wezterm/main?dir=nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     grc-rs = {
@@ -88,7 +84,7 @@
           crust = "ebebeb";
         };
       };
-      colors = themes.light;
+      colors = themes.dark;
     in {
       nixosConfigurations."kitaro" = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
