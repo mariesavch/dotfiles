@@ -927,6 +927,7 @@
         decentraleyes
         stylus
         istilldontcareaboutcookies
+        sidebery
       ];
     };
   };
