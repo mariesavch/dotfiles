@@ -1,8 +1,28 @@
 { pkgs, colors, inputs, ... }: {
   programs.firefox = {
     enable = true;
-    package = pkgs.firefox;
+    package = pkgs.firefox.override {
+      nativeMessagingHosts = [ pkgs.tridactyl-native ];
+    };
   };
+  xdg.configFile."tridactyl/tridactylrc".text = ''
+    set modeindicator false
+    set hintchars etovxqpdygfblzhckisuran
+    set hintuppercase false
+    unbind w
+    unbind W
+    unbind t
+    unbind T
+    unbind s
+    unbind S
+    unbind p
+    unbind P
+    unbind o
+    unbind O
+    unbind :
+    unbind <c-f>
+    unbind <c-i>
+  '';
   programs.firefox.profiles = let
     userChrome = ''
       :root {
@@ -283,14 +303,34 @@
 
       .urlbarView-body-inner{ border-top-style: none !important; }
       #TabsToolbar {display: none !important;}
-      #_3c078156-979c-498b-8990-85f7987dd929_-browser-action {
-        display: none !important;
-      }
     '';
     userContent = ''
       :root {
         scrollbar-width: none !important;
-
+        --tridactyl-container-color-blue: #${colors.teal} !important;
+        --tridactyl-container-color-turquoise: #${colors.teal} !important;
+        --tridactyl-container-color-green: #${colors.green} !important;
+        --tridactyl-container-color-yellow: #${colors.yellow} !important;
+        --tridactyl-container-color-orange: #${colors.peach} !important;
+        --tridactyl-container-color-red: #${colors.red} !important;
+        --tridactyl-container-color-pink: #${colors.pink} !important;
+        --tridactyl-container-color-purple: #${colors.mauve} !important;
+        --tridactyl-header-first-bg: #${colors.base};
+        --tridactyl-header-second-bg: #${colors.base};
+        --tridactyl-header-third-bg: #${colors.base};
+        --tridactyl-cmdl-line-height: 1.7 !important;
+        --tridactyl-bg: #${colors.base} !important;
+        --tridactyl-fg: #${colors.text} !important;
+        --tridactyl-cmdl-bg: #${colors.base} !important;
+        --tridactyl-cmdl-fg: #${colors.text} !important;
+        --tridactyl-hintspan-font-family: CartographCF Nerd Font !important;
+        --tridactyl-hintspan-fg: #${colors.base} !important;
+        --tridactyl-hintspan-bg: #${colors.mauve} !important;
+        --tridactyl-hint-active-fg: none !important;
+        --tridactyl-hint-active-bg: none !important;
+        --tridactyl-hint-active-outline: none !important;
+        --tridactyl-hint-bg: none !important;
+        --tridactyl-hint-outline: none !important;
       }
       @-moz-document url(about:privatebrowsing) {
         :root {
@@ -929,8 +969,8 @@
         clearurls
         decentraleyes
         stylus
+        tridactyl
         istilldontcareaboutcookies
-        sidebery
       ];
     };
   };
