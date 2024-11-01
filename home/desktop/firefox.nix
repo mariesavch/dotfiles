@@ -283,6 +283,9 @@
 
       .urlbarView-body-inner{ border-top-style: none !important; }
       #TabsToolbar {display: none !important;}
+      #_3c078156-979c-498b-8990-85f7987dd929_-browser-action {
+        display: none !important;
+      }
     '';
     userContent = ''
       :root {
