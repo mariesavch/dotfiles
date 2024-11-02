@@ -1,6 +1,6 @@
 { pkgs, lib, colors, ... }: {
   home = {
-    packages = with pkgs; [ wf-recorder wl-clipboard xdg-utils waylock ];
+    packages = with pkgs; [ wl-clipboard waylock ];
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
       DISABLE_QT5_COMPAT = "0";
