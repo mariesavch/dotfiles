@@ -1,4 +1,4 @@
-{ pkgs, inputs, config, ... }: {
+{ pkgs, config, ... }: {
   imports = [
     ./cli/git.nix
     ./cli/fish.nix
