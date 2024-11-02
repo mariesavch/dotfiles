@@ -315,10 +315,11 @@
         --tridactyl-container-color-red: #${colors.red} !important;
         --tridactyl-container-color-pink: #${colors.pink} !important;
         --tridactyl-container-color-purple: #${colors.mauve} !important;
-        --tridactyl-header-first-bg: #${colors.base};
-        --tridactyl-header-second-bg: #${colors.base};
-        --tridactyl-header-third-bg: #${colors.base};
+        --tridactyl-header-first-bg: #${colors.base} !important;
+        --tridactyl-header-second-bg: #${colors.base} !important;
+        --tridactyl-header-third-bg: #${colors.base} !important;
         --tridactyl-cmdl-line-height: 1.7 !important;
+        --tridactyl-cmplt-option-height: 2.3em !important;
         --tridactyl-bg: #${colors.base} !important;
         --tridactyl-fg: #${colors.text} !important;
         --tridactyl-cmdl-bg: #${colors.base} !important;
