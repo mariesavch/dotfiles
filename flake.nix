@@ -2,7 +2,8 @@
   description = "Nix Environment";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url =
+      "github:nixos/nixpkgs/807e9154dcb16384b1b765ebe9cd2bba2ac287fd";
 
     nixos-apple-silicon = {
       url = "github:zzywysm/nixos-asahi";
