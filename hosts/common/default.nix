@@ -35,9 +35,6 @@
     upower.enable = true;
     fstrim.enable = true;
     timesyncd.enable = true;
-    gvfs.enable = true;
-    udisks2.enable = true;
-    devmon.enable = true;
   };
 
   boot.loader = {

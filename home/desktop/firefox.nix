@@ -325,12 +325,13 @@
         --tridactyl-cmdl-bg: #${colors.base} !important;
         --tridactyl-cmdl-fg: #${colors.text} !important;
         --tridactyl-hintspan-font-family: CartographCF Nerd Font !important;
-        --tridactyl-hintspan-fg: #${colors.base} !important;
-        --tridactyl-hintspan-bg: #${colors.mauve} !important;
+        --tridactyl-hintspan-fg: #${colors.mauve} !important;
+        --tridactyl-hintspan-bg: #${colors.base} !important;
         --tridactyl-hint-active-fg: none !important;
         --tridactyl-hint-active-bg: none !important;
         --tridactyl-hint-active-outline: none !important;
         --tridactyl-hint-bg: none !important;
+        --tridactyl-hintspan-font-size: 14px !important;
         --tridactyl-hint-outline: none !important;
       }
       @-moz-document url(about:privatebrowsing) {

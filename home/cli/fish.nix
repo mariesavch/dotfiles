@@ -51,6 +51,7 @@
       copy = "wl-copy";
       ":q" = "exit";
       ":h" = "man";
+      mou = "sudo mount -o uid=marie,gid=users --mkdir";
       mkdir = "mkdir -p";
       nr = "sudo nixos-rebuild switch --flake ~/.dotfiles#kitaro";
       ns = "${lib.getExe pkgs.nh} search";

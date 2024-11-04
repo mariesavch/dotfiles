@@ -126,11 +126,6 @@ return {
         "rstml",
         "rust_with_rstml",
       },
-      init_options = {
-        userLanguages = {
-          rust = "html",
-        },
-      },
       settings = {
         tailwindCSS = {
           experimental = {

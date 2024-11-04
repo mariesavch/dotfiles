@@ -167,6 +167,7 @@ return {
             ["@tag.attribute.tsx"] = { fg = colors.mauve, style = { "italic" } },
             ["@tag.attribute"] = { fg = colors.mauve, style = { "italic" } },
             ["@tag.builtin.tsx"] = { fg = colors.mauve },
+            ["@lsp.type.namespace.rust"] = { fg = colors.pink, style = { "bold" } },
           }
         end,
       },

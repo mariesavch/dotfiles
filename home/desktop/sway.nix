@@ -1,6 +1,6 @@
 { pkgs, lib, colors, ... }: {
   home = {
-    packages = with pkgs; [ wl-clipboard waylock ];
+    packages = with pkgs; [ wl-clipboard waylock xdg-utils ];
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
       DISABLE_QT5_COMPAT = "0";
@@ -119,9 +119,9 @@
         "${mod}+XF86MonBrightnessUp" =
           "exec ${pkgs.brightness}/bin/brightness set 1%+";
 
-        "XF86LaunchA" = "exec yeelight 192.168.88.227 adjust bright decrease";
-        "XF86Search" = "exec yeelight 192.168.88.227 adjust bright increase";
-        "XF86AudioRecord" = "exec yeelight 192.168.88.227 toggle";
+        "XF86LaunchA" = "exec yeelight 192.168.88.227 toggle";
+        "XF86Search" = "exec yeelight 192.168.88.227 adjust bright circle";
+        "XF86AudioRecord" = "exec yeelight 192.168.88.227 adjust ct circle";
 
         "${mod}+q" = "kill";
         "${mod}+r" = ''mode "resize"'';

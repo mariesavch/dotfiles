@@ -18,6 +18,7 @@
     xq
     nodejs
     bun
+    tlrc
     theme
     # rust dev
     rustup
