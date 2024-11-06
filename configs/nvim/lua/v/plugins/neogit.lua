@@ -4,7 +4,9 @@ return {
     "nvim-lua/plenary.nvim",
     "nvim-telescope/telescope.nvim",
   },
-  config = true,
+  opts = {
+    disable_hint = true,
+  },
   cmd = "Neogit",
   keys = {
     {

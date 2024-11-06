@@ -104,6 +104,12 @@ return {
 
     lspconfig.tailwindcss.setup({
       capabilities = capabilities,
+      root_dir = lspconfig.util.root_pattern(
+        "tailwind.config.js",
+        "tailwind.config.cjs",
+        "tailwind.config.mjs",
+        "tailwind.config.ts"
+      ),
       filetypes = {
         "astro",
         "astro-markdown",
@@ -132,6 +138,9 @@ return {
             classRegex = {
               'class: "(.*)"',
               'class:"(.*)"',
+              '#[tw\\\\([^\\]]*class\\s*=\\s*"([^"]*)"\\)]", ""([^"]*)"',
+              "tw_merge!\\(([^)]*)\\)",
+              "(?:'|\"|`)([^']*)(?:'|\"|`)",
             },
           },
         },
