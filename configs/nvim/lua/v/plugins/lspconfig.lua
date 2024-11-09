@@ -102,6 +102,10 @@ return {
       },
     })
 
+    lspconfig.taplo.setup({
+      capabilities = capabilities,
+    })
+
     lspconfig.tailwindcss.setup({
       capabilities = capabilities,
       root_dir = lspconfig.util.root_pattern(

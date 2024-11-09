@@ -12,6 +12,7 @@
       lua-language-server
 
       rust-analyzer
+      taplo
 
       tailwindcss-language-server
       nodePackages.typescript

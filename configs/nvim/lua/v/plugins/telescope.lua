@@ -7,6 +7,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     "nvim-telescope/telescope-file-browser.nvim",
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+    "nvim-telescope/telescope-ui-select.nvim",
   },
   keys = {
     {
@@ -239,5 +240,6 @@ return {
     })
 
     telescope.load_extension("fzf")
+    telescope.load_extension("ui-select")
   end,
 }
