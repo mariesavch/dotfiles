@@ -14,7 +14,6 @@
       rust-analyzer
       taplo
 
-      tailwindcss-language-server
       nodePackages.typescript
       nodePackages.typescript-language-server
       nodePackages.vscode-langservers-extracted

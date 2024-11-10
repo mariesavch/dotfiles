@@ -1,4 +1,4 @@
-{ pkgs, config, ... }: {
+{ pkgs, inputs, config, ... }: {
   imports = [
     ./cli/git.nix
     ./cli/fish.nix
@@ -12,7 +12,7 @@
   ];
   home.stateVersion = "21.11";
   home.packages = with pkgs; [
-    wezterm
+    inputs.wezterm.packages.${pkgs.system}.default
     ripgrep
     fd
     xq

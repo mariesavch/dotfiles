@@ -106,49 +106,8 @@ return {
       capabilities = capabilities,
     })
 
-    lspconfig.tailwindcss.setup({
+    lspconfig.taplo.setup({
       capabilities = capabilities,
-      root_dir = lspconfig.util.root_pattern(
-        "tailwind.config.js",
-        "tailwind.config.cjs",
-        "tailwind.config.mjs",
-        "tailwind.config.ts"
-      ),
-      filetypes = {
-        "astro",
-        "astro-markdown",
-        "html",
-        "markdown",
-        "mdx",
-        "css",
-        "less",
-        "postcss",
-        "sass",
-        "scss",
-        "stylus",
-        "javascript",
-        "javascriptreact",
-        "typescript",
-        "typescriptreact",
-        "vue",
-        "svelte",
-        "rust",
-        "rstml",
-        "rust_with_rstml",
-      },
-      settings = {
-        tailwindCSS = {
-          experimental = {
-            classRegex = {
-              'class: "(.*)"',
-              'class:"(.*)"',
-              '#[tw\\\\([^\\]]*class\\s*=\\s*"([^"]*)"\\)]", ""([^"]*)"',
-              "tw_merge!\\(([^)]*)\\)",
-              "(?:'|\"|`)([^']*)(?:'|\"|`)",
-            },
-          },
-        },
-      },
     })
 
     lspconfig.jsonls.setup({
