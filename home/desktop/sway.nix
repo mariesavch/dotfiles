@@ -90,7 +90,7 @@
           } -a "full screen captured" "saved to ~/screenshots" -t 888'';
 
         "${mod}+Return" = "exec wezterm";
-        "${mod}+d" = "exec firefox";
+        "${mod}+d" = "exec luakit";
 
         "${mod}+n" = "exec ${pkgs.notifystatus}/bin/notifystatus";
 
@@ -119,9 +119,14 @@
         "${mod}+XF86MonBrightnessUp" =
           "exec ${pkgs.brightness}/bin/brightness set 1%+";
 
-        "XF86LaunchA" = "exec yeelight 192.168.88.227 toggle";
-        "XF86Search" = "exec yeelight 192.168.88.227 adjust bright circle";
-        "XF86AudioRecord" = "exec yeelight 192.168.88.227 adjust ct circle";
+        "XF86AudioRecord" = "exec yeelight 192.168.88.227 toggle";
+        "XF86LaunchA" = "exec ${pkgs.kbdbrightness}/bin/kbdbrightness set 5%-";
+        "XF86Search" = "exec ${pkgs.kbdbrightness}/bin/kbdbrightness set 5%+";
+
+        "${mod}+XF86LaunchA" =
+          "exec ${pkgs.kbdbrightness}/bin/kbdbrightness set 1%-";
+        "${mod}+XF86Search" =
+          "exec ${pkgs.kbdbrightness}/bin/kbdbrightness set 1%+";
 
         "${mod}+q" = "kill";
         "${mod}+r" = ''mode "resize"'';
