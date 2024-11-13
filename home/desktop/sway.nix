@@ -162,5 +162,10 @@
         "eDP-1".scale = "1";
       };
     };
+    extraConfig = ''
+      bindswitch lid:on exec sleep 4 && ${
+        lib.getExe pkgs.ffmpeg_7-headless
+      } -f v4l2 -s 640x480 -i /dev/video0 -ss 0:0:1 -frames 1 ~/pictures/shots/lid-$(date "+%Y%m%d"_"%Hh%Mm%Ss").jpg
+    '';
   };
 }

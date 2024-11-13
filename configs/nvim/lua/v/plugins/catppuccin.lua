@@ -111,6 +111,8 @@ return {
             CmpGhostText = { link = "Comment" },
             Folded = { link = "Comment" },
             LazyBackdrop = { bg = colors.base },
+            HighlightUndo = { bg = colors.teal, fg = colors.base },
+            HighlightRedo = { bg = colors.teal, fg = colors.base },
 
             TelescopeSelection = { bg = colors.surface0 },
             TelescopePromptCounter = { fg = colors.mauve, style = { "bold" } },

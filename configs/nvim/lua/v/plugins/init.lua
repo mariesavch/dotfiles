@@ -35,6 +35,7 @@ require("lazy").setup({
   { import = "v.plugins.crates" },
   { import = "v.plugins.minty" },
   { import = "v.plugins.neogit" },
+  { import = "v.plugins.highlight-undo" },
 }, {
   defaults = {
     lazy = true,

@@ -14,6 +14,7 @@
   home.packages = with pkgs; [
     inputs.wezterm.packages.${pkgs.system}.default
     ripgrep
+    pfetch-rs
     fd
     xq
     nodejs

@@ -14,6 +14,7 @@
   "friendly-snippets": { "branch": "main", "commit": "de8fce94985873666bd9712ea3e49ee17aadb1ed" },
   "gitsigns.nvim": { "branch": "main", "commit": "4daf7022f1481edf1e8fb9947df13bb07c18e89a" },
   "heirline.nvim": { "branch": "master", "commit": "7a79753c1a42c3f52e89a6c42429e7f871e560cd" },
+  "highlight-undo.nvim": { "branch": "main", "commit": "c87a6ec1ded241ef223269077cbd5f97a6f0d5bf" },
   "himalaya-vim": { "branch": "master", "commit": "f25c003e8fe532348b4080bf8d738cfa1bbf1f5f" },
   "hop.nvim": { "branch": "master", "commit": "08ddca799089ab96a6d1763db0b8adc5320bf050" },
   "lazy.nvim": { "branch": "main", "commit": "b1134ab82ee4279e31f7ddf7e34b2a99eb9b7bc9" },
