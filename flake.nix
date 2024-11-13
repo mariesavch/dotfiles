@@ -12,17 +12,8 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    wezterm = {
-      url = "github:wez/wezterm/main?dir=nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     grc-rs = {
       url = "github:mariesavch/grc-rs";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    firefox-addons = {
-      url =
-        "gitlab:rycee/nur-expressions/83a5049cfc2e37d9ef5b540aa01c0e5cc1e2a00f?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -88,7 +79,7 @@
           crust = "ebebeb";
         };
       };
-      colors = themes.light;
+      colors = themes.dark;
     in {
       nixosConfigurations."kitaro" = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";

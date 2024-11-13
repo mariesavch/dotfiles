@@ -28,7 +28,7 @@ settings.webview.serif_font_family = "CartographCF Nerd Font"
 settings.webview.sans_serif_font_family = "CartographCF Nerd Font"
 settings.webview.zoom_level = 120
 settings.tablist.visibility = "never"
-settings.application.prefer_dark_mode = false
+settings.application.prefer_dark_mode = true
 settings.window.new_window_size = "1800x1400"
 
 modes.add_binds("normal", {

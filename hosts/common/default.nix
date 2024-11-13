@@ -6,7 +6,13 @@
     ./locale.nix
     ./environment.nix
   ];
-  nixpkgs.overlays = [ (import ../../overlays/binscripts.nix) ];
+  nixpkgs.overlays = [
+    (import ../../overlays/binscripts.nix)
+    (final: prev: {
+      phocus-oxocarbon =
+        prev.callPackage ../../overlays/phocus-oxocarbon.nix { };
+    })
+  ];
 
   home-manager = {
     useGlobalPkgs = true;

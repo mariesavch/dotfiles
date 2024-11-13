@@ -27,7 +27,7 @@ local config = {
 	hide_mouse_cursor_when_typing = false,
 	audible_bell = "Disabled",
 	enable_scroll_bar = false,
-	front_end = "OpenGL",
+	front_end = "WebGpu",
 	mouse_wheel_scrolls_tabs = false,
 }
 

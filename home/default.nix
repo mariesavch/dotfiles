@@ -11,7 +11,7 @@
   ];
   home.stateVersion = "21.11";
   home.packages = with pkgs; [
-    inputs.wezterm.packages.${pkgs.system}.default
+    wezterm
     luakit
     ripgrep
     pfetch-rs
