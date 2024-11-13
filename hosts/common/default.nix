@@ -12,6 +12,7 @@
       phocus-oxocarbon =
         prev.callPackage ../../overlays/phocus-oxocarbon.nix { };
     })
+    (final: prev: { luakit = prev.callPackage ../../overlays/luakit.nix { }; })
   ];
 
   home-manager = {
