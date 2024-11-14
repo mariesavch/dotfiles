@@ -31,6 +31,10 @@ settings.tablist.visibility = "never"
 settings.application.prefer_dark_mode = true
 settings.window.new_window_size = "1800x1400"
 
+modes.remap_binds("normal", {
+	{ "y", "Y", true },
+})
+
 modes.add_binds("normal", {
 	{
 		"<Control-c>",

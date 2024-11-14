@@ -8,10 +8,6 @@
   ];
   nixpkgs.overlays = [
     (import ../../overlays/binscripts.nix)
-    (final: prev: {
-      phocus-oxocarbon =
-        prev.callPackage ../../overlays/phocus-oxocarbon.nix { };
-    })
     (final: prev: { luakit = prev.callPackage ../../overlays/luakit.nix { }; })
   ];
 
