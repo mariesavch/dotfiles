@@ -2,6 +2,7 @@ local select = require("select")
 local follow = require("follow")
 local settings = require("settings")
 local modes = require("modes")
+local window = require("window")
 require("lousy.widget.tablist")
 
 select.label_maker = function(s)
@@ -39,3 +40,8 @@ modes.add_binds("normal", {
 		end,
 	},
 })
+
+window.add_signal("build", function(w)
+	w.sbar.layout.margin_top = 6
+	w.sbar.layout.margin_bottom = 6
+end)
