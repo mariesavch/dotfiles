@@ -28,7 +28,7 @@ settings.webview.pictograph_font_family = "CartographCF Nerd Font"
 settings.webview.serif_font_family = "CartographCF Nerd Font"
 settings.webview.sans_serif_font_family = "CartographCF Nerd Font"
 settings.tablist.visibility = "never"
-settings.application.prefer_dark_mode = true
+settings.application.prefer_dark_mode = false
 settings.window.new_window_size = "1800x1400"
 
 modes.remap_binds("normal", {
@@ -46,6 +46,6 @@ modes.add_binds("normal", {
 })
 
 window.add_signal("build", function(w)
-	w.sbar.layout.margin_top = 6
-	w.sbar.layout.margin_bottom = 6
+	w.sbar.layout.margin_top = 7
+	w.sbar.layout.margin_bottom = 7
 end)

@@ -4,7 +4,7 @@ local fonts = {}
 
 function fonts.setup(config)
 	config.font = wezterm.font_with_fallback({ "CartographCF Nerd Font" })
-	config.font_size = 12
+	config.font_size = 14
 	config.underline_thickness = "200%"
 	config.underline_position = "-4pt"
 	config.line_height = 1.6

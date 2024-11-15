@@ -59,9 +59,9 @@ local themes = {
 	},
 }
 
-local colors = themes.dark
+local colors = themes.light
 
-theme.font = "15px CartographCF Nerd Font"
+theme.font = "18px CartographCF Nerd Font"
 theme.fg = colors.text
 theme.bg = colors.base
 
@@ -122,7 +122,7 @@ theme.private_tab_bg = colors.mantle
 theme.trust_fg = colors.blue
 theme.notrust_fg = colors.red
 
-theme.hint_font = "15px CartographCF Nerd Font"
+theme.hint_font = "18px CartographCF Nerd Font"
 theme.hint_fg = colors.mauve
 theme.hint_bg = colors.mantle
 theme.hint_border = "1px solid " .. colors.crust

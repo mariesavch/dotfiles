@@ -1,4 +1,4 @@
-{ pkgs, colors, ... }: {
+{ colors, ... }: {
   services.dunst = let
     style = {
       timeout = 8;
@@ -25,9 +25,9 @@
         horizontal_padding = 18;
         frame_width = 0;
         gap_size = 9;
-        font = "CartographCF Nerd Font 12";
+        font = "CartographCF Nerd Font 14";
         format =
-          "<span size='x-large' font_desc='CartographCF Nerd Font Heavy Italic 9' foreground='#${colors.text}'>%a</span>\\n%s%b";
+          "<span size='x-large' font_desc='CartographCF Nerd Font Heavy Italic 11' foreground='#${colors.text}'>%a</span>\\n%s%b";
         show_indicators = false;
         mouse_left_click = "do_action";
         mouse_middle_click = "close_all";
