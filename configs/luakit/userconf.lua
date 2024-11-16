@@ -46,6 +46,6 @@ modes.add_binds("normal", {
 })
 
 window.add_signal("build", function(w)
-	w.sbar.layout.margin_top = 7
+	w.sbar.layout.margin_top = 8
 	w.sbar.layout.margin_bottom = 7
 end)

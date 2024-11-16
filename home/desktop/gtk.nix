@@ -5,7 +5,7 @@ in {
     enable = true;
     font = {
       name = "CartographCF Nerd Font";
-      size = 14;
+      size = 15;
     };
     gtk2.configLocation = "/home/marie/.config/gtk-2.0/gtkrc";
     gtk3.extraConfig.gtk-application-prefer-dark-theme = is_dark;

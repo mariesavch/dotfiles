@@ -119,7 +119,6 @@
         "${mod}+XF86MonBrightnessUp" =
           "exec ${pkgs.brightness}/bin/brightness set 1%+";
 
-        "XF86AudioRecord" = "exec yeelight 192.168.88.227 toggle";
         "XF86LaunchA" = "exec ${pkgs.kbdbrightness}/bin/kbdbrightness set 5%-";
         "XF86Search" = "exec ${pkgs.kbdbrightness}/bin/kbdbrightness set 5%+";
 
