@@ -1,8 +1,10 @@
 return {
-  { "nvchad/volt", lazy = true },
   {
     "nvchad/minty",
     cmd = { "Shades", "Huefy" },
+    dependencies = {
+      { "nvchad/volt", lazy = true },
+    },
     keys = {
       {
         "<leader>sh",
