@@ -36,8 +36,7 @@ require("lazy").setup({
   { import = "v.plugins.minty" },
   { import = "v.plugins.neogit" },
   { import = "v.plugins.highlight-undo" },
-  { import = "v.plugins.typr" },
-  { import = "v.plugins.showkeys" },
+  { import = "v.plugins.snacks" },
 }, {
   defaults = {
     lazy = true,

@@ -59,7 +59,7 @@ local themes = {
 	},
 }
 
-theme.colors = themes.light
+theme.colors = themes.dark
 
 function theme.setup(config)
 	local colors = theme.colors
