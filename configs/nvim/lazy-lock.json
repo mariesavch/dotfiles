@@ -17,7 +17,7 @@
   "highlight-undo.nvim": { "branch": "main", "commit": "ef7a66df6833df1ea25bce257b0d92f87ed6037b" },
   "himalaya-vim": { "branch": "master", "commit": "f25c003e8fe532348b4080bf8d738cfa1bbf1f5f" },
   "hop.nvim": { "branch": "master", "commit": "08ddca799089ab96a6d1763db0b8adc5320bf050" },
-  "lazy.nvim": { "branch": "main", "commit": "7967abe55752aa90532e6bb4bd4663fe27a264cb" },
+  "lazy.nvim": { "branch": "main", "commit": "56ead98e05bb37a4ec28930a54d836d033cf00f2" },
   "minty": { "branch": "main", "commit": "b454ca0229f8e22a631fd3c014ec99973fb8cad4" },
   "neodev.nvim": { "branch": "main", "commit": "46aa467dca16cf3dfe27098042402066d2ae242d" },
   "neogit": { "branch": "master", "commit": "89d13fb9898619774d359a3900959181d60dd02f" },
@@ -41,7 +41,7 @@
   "telescope-ui-select.nvim": { "branch": "master", "commit": "6e51d7da30bd139a6950adf2a47fda6df9fa06d2" },
   "telescope.nvim": { "branch": "master", "commit": "85922dde3767e01d42a08e750a773effbffaea3e" },
   "treesj": { "branch": "main", "commit": "0d81326b5afd36babe7dd480aabbb0b05f33e688" },
-  "typescript-tools.nvim": { "branch": "master", "commit": "1edc5dcba8cb46e71feddde91c9c3d4bce77bec5" },
+  "typescript-tools.nvim": { "branch": "master", "commit": "d03a0a5e7bebe1b64ff971a6c4d10e5351734c85" },
   "volt": { "branch": "main", "commit": "a36c576baae487634151377f601bf3f5de355f5a" },
   "which-key.nvim": { "branch": "main", "commit": "0539da005b98b02cf730c1d9da82b8e8edb1c2d2" }
 }

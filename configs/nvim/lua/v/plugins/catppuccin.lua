@@ -148,6 +148,9 @@ return {
             NoiceCmdlinePopupBorder = { bg = colors.mantle, fg = colors.mantle },
             NoiceCmdlinePopupBorderSearch = { bg = colors.mantle, fg = colors.mantle },
 
+            SnacksDashboardTitle = { fg = colors.mauve, style = { "bold" } },
+            SnacksDashboardFile = { fg = colors.blue },
+
             Todo = { fg = colors.mauve, bg = colors.none, style = { "bold" } },
             ["@comment.error"] = { fg = colors.red, bg = colors.none, style = { "bold" } },
             ["@comment.warning"] = { fg = colors.yellow, bg = colors.none, style = { "bold" } },
