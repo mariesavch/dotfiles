@@ -113,6 +113,7 @@ return {
             LazyBackdrop = { bg = colors.base },
             HighlightUndo = { bg = colors.teal, fg = colors.base },
             HighlightRedo = { bg = colors.teal, fg = colors.base },
+            Cursor = { bg = colors.overlay0 },
 
             TelescopeSelection = { bg = colors.surface0 },
             TelescopePromptCounter = { fg = colors.mauve, style = { "bold" } },

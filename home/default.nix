@@ -15,6 +15,8 @@
     luakit
     ripgrep
     pfetch-rs
+    rink
+    thokr
     fd
     xq
     nodejs

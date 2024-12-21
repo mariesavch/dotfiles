@@ -6,8 +6,8 @@ return {
     words = { enabled = true },
     dashboard = {
       sections = {
-        { title = "recent files", section = "recent_files", padding = 1 },
-        { title = "projects", section = "projects", padding = 1 },
+        { title = "recent files", section = "recent_files", limit = 10, padding = 1 },
+        { title = "projects", section = "projects", limit = 10, padding = 1 },
       },
     },
   },
