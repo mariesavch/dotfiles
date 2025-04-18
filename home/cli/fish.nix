@@ -69,7 +69,6 @@
       set -gx VISUAL $EDITOR
       set -gx SUDO_EDITOR $EDITOR
       set -gx MANPAGER "nvim +Man!"
-      set -gx PKG_CONFIG_PATH "${pkgs.openssl.dev}/lib/pkgconfig"
 
       ${lib.getExe pkgs.nix-your-shell} fish | source
       grc-rs --aliases --except=du,df | source

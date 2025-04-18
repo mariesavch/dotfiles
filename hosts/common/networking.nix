@@ -15,8 +15,4 @@
     0.0.0.0 www.instagram.com
     0.0.0.0 news.ycombinator.com
   '';
-  services.v2ray = {
-    enable = true;
-    configFile = "/var/secrets/v2ray.json";
-  };
 }

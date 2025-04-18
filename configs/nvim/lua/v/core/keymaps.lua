@@ -11,6 +11,6 @@ map("n", "<leader>b", "<cmd>e ~/notes/note.md<cr>", { desc = "[note]" })
 map(
   "n",
   "<leader>v",
-  string.format("<cmd>e ~/notes/journal/%s.md<cr>", os.date("%Y-%m-%d")),
+  string.format("<cmd>e ~/.catgirljournal/%s.md<cr>", os.date("%Y-%m-%d")),
   { desc = "[note] journal" }
 )
