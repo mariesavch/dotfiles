@@ -31,7 +31,7 @@ settings.webview.cursive_font_family = "CartographCF Nerd Font"
 settings.webview.default_font_family = "CartographCF Nerd Font"
 settings.webview.enable_offline_web_application_cache = false
 settings.tablist.visibility = "never"
-settings.application.prefer_dark_mode = true
+settings.application.prefer_dark_mode = false
 settings.window.new_window_size = "1800x1400"
 
 modes.remap_binds("normal", {

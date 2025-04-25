@@ -59,7 +59,7 @@ local themes = {
 	},
 }
 
-local colors = themes.dark
+local colors = themes.light
 
 theme.font = "19px CartographCF Nerd Font"
 theme.fg = colors.text

@@ -13,8 +13,6 @@
   home.stateVersion = "21.11";
   home.packages = with pkgs; [
     wezterm
-    luakit
-    libreoffice
     ripgrep
     neofetch
     rink

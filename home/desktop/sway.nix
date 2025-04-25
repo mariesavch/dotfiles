@@ -1,6 +1,6 @@
 { pkgs, lib, colors, ... }: {
   home = {
-    packages = with pkgs; [ mpv waylock wl-clipboard xdg-utils ];
+    packages = with pkgs; [ mpv wl-clipboard xdg-utils ];
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
       DISABLE_QT5_COMPAT = "0";
@@ -52,14 +52,6 @@
           pointer_accel = "0.47";
         };
       };
-      startup = [{
-        command = ''
-          ${lib.getExe pkgs.swayidle} -w \
-            timeout 900 'waylock -ignore-empty-password -init-color 0x000000 -input-color 0x${colors.base} -input-alt-color 0x${colors.base} -fail-color 0x${colors.red}' \
-            before-sleep 'waylock -ignore-empty-password -init-color 0x000000 -input-color 0x${colors.base} -input-alt-color 0x${colors.base} -fail-color 0x${colors.red}'
-        '';
-        always = true;
-      }];
       bars = lib.mkForce [ ];
       defaultWorkspace = "workspace 1";
       keybindings = let
@@ -72,8 +64,6 @@
         }) (lib.range 0 9));
       in tagBinds // {
         "${mod}+o" = "exec ${lib.getExe pkgs.hyprpicker} -a -n";
-        "XF86PowerOff" =
-          "exec waylock -ignore-empty-password -init-color 0x000000 -input-color 0x${colors.base} -input-alt-color 0x${colors.base} -fail-color 0x${colors.red}";
         "${mod}+XF86PowerOff" = "exec sudo systemctl poweroff";
         "${mod}+Alt+XF86PowerOff" = "exec sudo systemctl reboot";
 
@@ -103,10 +93,6 @@
 
         "${mod}+Return" = "exec wezterm";
         "${mod}+d" = "exec firefox";
-        "${mod}+Shift+d" = "exec luakit";
-        "${mod}+t" = "exec ${lib.getExe pkgs.telegram-desktop}";
-        "${mod}+Shift+t" = "exec ${lib.getExe pkgs.libreoffice}";
-
         "${mod}+n" = "exec ${pkgs.notifystatus}/bin/notifystatus";
 
         "XF86AudioMute" = "exec ${pkgs.volume}/bin/volume sset Master toggle";
