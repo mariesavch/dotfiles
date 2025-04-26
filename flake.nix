@@ -2,7 +2,7 @@
   description = "Nix Environment";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs";
 
     nixos-apple-silicon = {
       url =
@@ -84,7 +84,7 @@
           crust = "ebebeb";
         };
       };
-      colors = themes.light;
+      colors = themes.dark;
     in {
       nixosConfigurations."kitaro" = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
