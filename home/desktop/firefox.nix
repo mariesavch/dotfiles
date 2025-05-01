@@ -1,7 +1,7 @@
 { pkgs, colors, inputs, ... }: {
   programs.firefox = {
     enable = true;
-    package = pkgs.firefox.override {
+    package = pkgs.firefox-beta-bin.override {
       nativeMessagingHosts = [ pkgs.tridactyl-native ];
     };
   };
@@ -359,8 +359,13 @@
           scrollbar-width: none !important;
         }
       }
+      @-moz-document url-prefix("about:blank"), url-prefix("chrome://browser/content/blanktab.html") {
+        :root {
+            background-color: #${colors.base} !important;
+        }
+      }
        @-moz-document url-prefix("about:newtab"), url-prefix("about:home"), url-prefix("about:privatebrowsing") {
-        body {
+        :root {
           background-color: #${colors.base} !important;
         }
         .icon-settings,

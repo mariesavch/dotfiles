@@ -30,6 +30,7 @@
     gnumake
     lld_19
     gcc
+    dioxus-cli
   ];
   xdg.configFile."wezterm" = {
     source = config.lib.file.mkOutOfStoreSymlink

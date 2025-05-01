@@ -92,7 +92,7 @@
           } -a "full screen captured" "saved to ~/screenshots" -t 888'';
 
         "${mod}+Return" = "exec wezterm";
-        "${mod}+d" = "exec firefox";
+        "${mod}+d" = "exec firefox-beta";
         "${mod}+n" = "exec ${pkgs.notifystatus}/bin/notifystatus";
 
         "XF86AudioMute" = "exec ${pkgs.volume}/bin/volume sset Master toggle";
