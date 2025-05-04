@@ -69,6 +69,17 @@
       set -gx VISUAL $EDITOR
       set -gx SUDO_EDITOR $EDITOR
       set -gx MANPAGER "nvim +Man!"
+      set -gx LD_LIBRARY_PATH "${
+        lib.makeLibraryPath [
+          pkgs.pkg-config
+          pkgs.udev
+          pkgs.alsa-lib-with-plugins
+          pkgs.vulkan-loader
+          pkgs.libxkbcommon
+          pkgs.wayland
+          pkgs.openssl
+        ]
+      }"
 
       ${lib.getExe pkgs.nix-your-shell} fish | source
       grc-rs --aliases --except=du,df | source
