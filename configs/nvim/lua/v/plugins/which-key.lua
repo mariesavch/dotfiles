@@ -9,7 +9,7 @@ return {
       ["<leader>f"] = { name = "+[telescope]" },
       ["<leader>g"] = { name = "+[git]" },
       ["<leader>l"] = { name = "+[lsp]" },
-      ["<leader>t"] = { name = "+[typescript]" },
+      ["<leader>s"] = { name = "+[colorpicker]" },
     }, {
       mode = "n",
       prefix = "",

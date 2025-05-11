@@ -323,6 +323,10 @@
       :root[uidensity="compact"]:not([inFullscreen]){
         --uc-bottom-toolbar-height: 38px !important;
       }
+
+      #urlbar-searchmode-switcher {
+        display: none !important;
+      }
     '';
     userContent = ''
       :root {

@@ -5,8 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs";
 
     nixos-apple-silicon = {
-      url =
-        "github:mariesavch/nixos-asahi/194dce795b70a1b5e229bd5a80e7b788b911654d";
+      url = "github:tpwrules/nixos-apple-silicon";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {

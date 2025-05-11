@@ -23,7 +23,10 @@
     users.marie.imports = [ ../../home ];
   };
   nix = {
-    gc.automatic = true;
+    gc = {
+      automatic = true;
+      dates = "weekly";
+    };
     settings = {
       warn-dirty = false;
       experimental-features = [ "nix-command" "flakes" ];

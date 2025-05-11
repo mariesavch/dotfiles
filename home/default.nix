@@ -19,7 +19,6 @@
     thokr
     fd
     xq
-    nodejs
     bun
     tlrc
     theme

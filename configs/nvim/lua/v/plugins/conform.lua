@@ -12,17 +12,13 @@ return {
   },
   opts = {
     formatters_by_ft = {
-      javascript = { "dprint" },
-      javascriptreact = { "dprint" },
-      typescript = { "dprint" },
-      typescriptreact = { "dprint" },
       json = { "dprint" },
       jsonc = { "dprint" },
       markdown = { "dprint" },
       fish = { "fish_indent" },
       lua = { "stylua" },
       nix = { "nixfmt" },
-      rust = { "rustfmt", "dxfmt" },
+      rust = { "rustfmt" },
     },
     formatters = {
       injected = { options = { ignore_errors = true } },

@@ -9,12 +9,12 @@ return {
       {
         "<leader>sh",
         "<cmd>Huefy<cr>",
-        desc = "[color picker] huefy",
+        desc = "[colorpicker] huefy",
       },
       {
         "<leader>sg",
         "<cmd>Shades<cr>",
-        desc = "[color picker] shades",
+        desc = "[colorpicker] shades",
       },
     },
   },

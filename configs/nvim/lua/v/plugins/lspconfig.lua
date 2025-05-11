@@ -76,18 +76,6 @@ return {
       capabilities = capabilities,
     })
 
-    lspconfig.cssls.setup({
-      capabilities = capabilities,
-    })
-
-    lspconfig.html.setup({
-      capabilities = capabilities,
-    })
-
-    lspconfig.yamlls.setup({
-      capabilities = capabilities,
-    })
-
     lspconfig.lua_ls.setup({
       capabilities = capabilities,
       settings = {
@@ -104,24 +92,6 @@ return {
 
     lspconfig.taplo.setup({
       capabilities = capabilities,
-    })
-
-    lspconfig.taplo.setup({
-      capabilities = capabilities,
-    })
-
-    lspconfig.tailwindcss.setup({
-      capabilities = capabilities,
-      root_dir = lspconfig.util.root_pattern(
-        "tailwind.config.js",
-        "tailwind.config.cjs",
-        "tailwind.config.mjs",
-        "tailwind.config.ts",
-        "postcss.config.js",
-        "postcss.config.cjs",
-        "postcss.config.mjs",
-        "postcss.config.ts"
-      ),
     })
 
     lspconfig.jsonls.setup({
