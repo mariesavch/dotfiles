@@ -8,11 +8,6 @@ return {
   config = function()
     local lspconfig = require("lspconfig")
 
-    vim.fn.sign_define("DiagnosticSignError", { text = "", texthl = "DiagnosticSignError", numhl = "" })
-    vim.fn.sign_define("DiagnosticSignHint", { text = "", texthl = "DiagnosticSignHint", numhl = "" })
-    vim.fn.sign_define("DiagnosticSignInfo", { text = "", texthl = "DiagnosticSignInfo", numhl = "" })
-    vim.fn.sign_define("DiagnosticSignWarn", { text = "", texthl = "DiagnosticSignWarn", numhl = "" })
-
     local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
     ---@diagnostic disable-next-line: duplicate-set-field
     function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
@@ -45,15 +40,32 @@ return {
           return string.format("%s ", diagnostic.message)
         end,
       },
-      signs = true,
+      signs = {
+        text = {
+          [vim.diagnostic.severity.ERROR] = "",
+          [vim.diagnostic.severity.WARN] = "",
+          [vim.diagnostic.severity.INFO] = "",
+          [vim.diagnostic.severity.HINT] = "",
+        },
+        texthl = {
+          [vim.diagnostic.severity.ERROR] = "DiagnosticSignError",
+          [vim.diagnostic.severity.WARN] = "DiagnosticSignWarn",
+          [vim.diagnostic.severity.INFO] = "DiagnosticSignInfo",
+          [vim.diagnostic.severity.HINT] = "DiagnosticSignHint",
+        },
+      },
       underline = true,
       update_in_insert = false,
       severity_sort = true,
     })
 
     vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, { desc = "[lsp] line diagnostic" })
-    vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "[lsp] previous diagnostic" })
-    vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "[lsp] next diagnostic" })
+    vim.keymap.set("n", "[d", function()
+      vim.diagnostic.jump({ count = 1 })
+    end, { desc = "[lsp] previous diagnostic" })
+    vim.keymap.set("n", "]d", function()
+      vim.diagnostic.jump({ count = -1 })
+    end, { desc = "[lsp] next diagnostic" })
 
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("UserLspConfig", {}),
