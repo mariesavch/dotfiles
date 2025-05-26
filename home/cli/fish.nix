@@ -69,17 +69,6 @@
       set -gx VISUAL $EDITOR
       set -gx SUDO_EDITOR $EDITOR
       set -gx MANPAGER "nvim +Man!"
-      set -gx LD_LIBRARY_PATH "${
-        lib.makeLibraryPath [
-          pkgs.pkg-config
-          pkgs.udev
-          pkgs.alsa-lib-with-plugins
-          pkgs.vulkan-loader
-          pkgs.libxkbcommon
-          pkgs.wayland
-          pkgs.openssl
-        ]
-      }"
 
       ${lib.getExe pkgs.nix-your-shell} fish | source
       grc-rs --aliases --except=du,df | source
@@ -91,6 +80,66 @@
       set -g fish_cursor_insert line
       set -g fish_cursor_replace_one underscore
       set -g fish_cursor_visual block
+
+
+      set -g __auto_nix_develop 1
+
+      set -g __nix_develop_last_dir ""
+
+      function toggle-auto-nix-develop
+          if test "$__auto_nix_develop" -eq 1
+              set -g __auto_nix_develop 0
+              echo -e "automatic nix develop \033[1;32mdisabled\033[0m"
+          else
+              set -g __auto_nix_develop 1
+              echo -e "automatic nix develop \033[1;32menabled\033[0m"
+          end
+      end
+
+      function __find_flake_root --argument dir
+          while test "$dir" != "/"
+              if test -f "$dir/flake.nix"
+                  echo "$dir"
+                  return 0
+              end
+              set dir (dirname "$dir")
+          end
+          return 1
+      end
+
+      function __auto_enter_nix_develop
+          if test "$__auto_nix_develop" -ne 1
+              return
+          end
+
+          if test "$PWD" = "$__nix_develop_last_dir"
+              return
+          end
+
+          if not string match -q "$HOME/projects/*" "$PWD"
+              return
+          end
+
+          set flake_root (__find_flake_root "$PWD")
+          if test -z "$flake_root"
+              return
+          end
+
+          if test -n "$IN_NIX_SHELL"
+              return
+          end
+
+          set -g __nix_develop_last_dir "$PWD"
+          exec nix develop "$flake_root"# -c fish
+      end
+
+      function __auto_nix_on_pwd --on-variable PWD
+          __auto_enter_nix_develop
+      end
+
+      function fish_greeting 
+          __auto_enter_nix_develop
+      end
     '';
   };
 

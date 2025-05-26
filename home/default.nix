@@ -13,6 +13,7 @@
   home.stateVersion = "21.11";
   home.packages = with pkgs; [
     wezterm
+    airshipper
     ripgrep
     neofetch
     rink
@@ -23,21 +24,6 @@
     tlrc
     theme
     extract
-    # rust dev
-    rustup
-    pkg-config
-    gnumake
-    lld_19
-    gcc
-    dioxus-cli
-    # bevy engine deps
-    pkg-config
-    udev
-    alsa-lib-with-plugins
-    vulkan-loader
-    libxkbcommon
-    wayland
-    openssl
   ];
   xdg.configFile."wezterm" = {
     source = config.lib.file.mkOutOfStoreSymlink

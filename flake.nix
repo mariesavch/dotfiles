@@ -83,7 +83,7 @@
           crust = "ebebeb";
         };
       };
-      colors = themes.dark;
+      colors = themes.light;
     in {
       nixosConfigurations."kitaro" = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";

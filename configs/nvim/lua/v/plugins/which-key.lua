@@ -10,6 +10,7 @@ return {
       ["<leader>g"] = { name = "+[git]" },
       ["<leader>l"] = { name = "+[lsp]" },
       ["<leader>s"] = { name = "+[colorpicker]" },
+      ["<leader>v"] = { name = "+[note]" },
     }, {
       mode = "n",
       prefix = "",

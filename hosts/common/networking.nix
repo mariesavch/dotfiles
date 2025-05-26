@@ -3,7 +3,7 @@
     enable = true;
     settings.General.EnableNetworkConfiguration = true;
   };
-  networking.firewall.allowedTCPPorts = [ 1080 22299 3000 8080 ];
+  networking.firewall.allowedTCPPorts = [ 1080 ];
   networking.extraHosts = ''
     0.0.0.0 ufanet.ru
     0.0.0.0 www.ufanet.ru
@@ -15,6 +15,7 @@
     0.0.0.0 www.instagram.com
     0.0.0.0 news.ycombinator.com
   '';
+  networking.proxy.default = "";
   services.v2ray = {
     enable = true;
     configFile = "/var/secrets/v2ray.json";

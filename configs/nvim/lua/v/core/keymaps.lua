@@ -7,10 +7,10 @@ map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "[search] clear" })
 
 map("n", "<leader>p", "<cmd>:Lazy<cr>", { desc = "[lazy]" })
 
-map("n", "<leader>b", "<cmd>e ~/notes/note.md<cr>", { desc = "[note]" })
+map("n", "<leader>vn", "<cmd>e ~/notes/note.md<cr>", { desc = "[note]" })
 map(
   "n",
-  "<leader>v",
+  "<leader>vj",
   string.format("<cmd>e ~/.catgirljournal/%s.md<cr>", os.date("%Y-%m-%d")),
   { desc = "[note] journal" }
 )

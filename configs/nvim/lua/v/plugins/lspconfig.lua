@@ -105,16 +105,5 @@ return {
     lspconfig.taplo.setup({
       capabilities = capabilities,
     })
-
-    lspconfig.jsonls.setup({
-      capabilities = capabilities,
-      on_attach = function(client)
-        client.server_capabilities.documentFormattingProvider = false
-        client.server_capabilities.documentRangeFormattingProvider = false
-      end,
-      init_options = {
-        provideFormatter = true,
-      },
-    })
   end,
 }

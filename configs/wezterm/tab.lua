@@ -45,6 +45,10 @@ local function get_process(tab)
 			{ Foreground = { Color = colors.peach } },
 			{ Text = "" },
 		},
+		[".rustup-wrapped"] = {
+			{ Foreground = { Color = colors.peach } },
+			{ Text = "" },
+		},
 		["go"] = {
 			{ Foreground = { Color = colors.sapphire } },
 			{ Text = "" },
