@@ -38,7 +38,6 @@
       tarball-ttl = 604800;
     };
   };
-  nixpkgs.config.allowUnfree = true;
 
   fonts.packages = with pkgs; [ noto-fonts-emoji noto-fonts-cjk-sans ];
 
