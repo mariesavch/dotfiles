@@ -133,12 +133,10 @@
           exec nix develop "$flake_root"# -c fish
       end
 
-      function __auto_nix_on_pwd --on-variable PWD
-          __auto_enter_nix_develop
-      end
-
-      function fish_greeting 
-          __auto_enter_nix_develop
+      function __auto_nix_on_pwd --on-event fish_prompt
+          if test "$PWD" != "$__nix_develop_last_dir"
+              __auto_enter_nix_develop
+          end
       end
     '';
   };
