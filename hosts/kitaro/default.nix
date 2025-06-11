@@ -16,6 +16,7 @@
       withRust = true;
     };
     graphics.enable = true;
+    bluetooth.enable = true;
   };
 
   boot = {

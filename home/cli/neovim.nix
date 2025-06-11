@@ -2,16 +2,12 @@
   programs.neovim = {
     enable = true;
     defaultEditor = true;
-    vimAlias = true;
-    viAlias = true;
-    vimdiffAlias = true;
     withRuby = false;
     withPython3 = false;
     extraPackages = with pkgs; [
       stylua
       lua-language-server
 
-      rust-analyzer
       taplo
 
       dprint

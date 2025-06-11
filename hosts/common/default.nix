@@ -1,19 +1,14 @@
-{ inputs, colors, pkgs, ... }: {
+{ inputs, colors, ... }: {
   imports = [
     ./console.nix
     ./networking.nix
     ./users.nix
     ./locale.nix
     ./environment.nix
-    ./bluetooth.nix
-    ./printing.nix
   ];
   nixpkgs.overlays = [
     (import ../../overlays/binscripts.nix)
-    (final: prev: {
-      phocus-oxocarbon =
-        prev.callPackage ../../overlays/phocus-oxocarbon.nix { };
-    })
+    inputs.neovim-nightly.overlays.default
   ];
 
   home-manager = {
@@ -39,9 +34,6 @@
     };
   };
 
-  fonts.packages = with pkgs; [ noto-fonts-emoji noto-fonts-cjk-sans ];
-
-  security.pam.services.waylock = { };
   security.sudo.wheelNeedsPassword = false;
 
   services = {

@@ -2,8 +2,10 @@
   environment = {
     sessionVariables = {
       EDITOR = "nvim";
-      BROWSER = "firefox";
-      TERMINAL = "wezterm";
+      VISUAL = "nvim";
+      SUDO_EDITOR = "nvim";
+      MANPAGER = "nvim +Man!";
+      BROWSER = "luakit";
       XDG_CACHE_HOME = "$HOME/.cache";
       XDG_CONFIG_HOME = "$HOME/.config";
       XDG_DATA_HOME = "$HOME/.local/share";

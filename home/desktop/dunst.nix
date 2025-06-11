@@ -1,4 +1,4 @@
-{ colors, ... }: {
+{ colors, pkgs, ... }: {
   services.dunst = let
     style = {
       timeout = 8;

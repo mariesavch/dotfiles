@@ -4,32 +4,11 @@
   programs.zoxide = {
     enable = true;
     enableFishIntegration = true;
+    options = [ "--cmd cd" ];
   };
-  programs.starship = {
+  programs.direnv = {
     enable = true;
-    enableFishIntegration = true;
-    settings = {
-      format =
-        "$directory$git_branch$git_commit$git_state$git_status$nix_shell$cmd_duration$line_break$character";
-      nix_shell = {
-        format = "via [ nix]($style) ";
-        heuristic = true;
-      };
-      directory = {
-        style = "cyan bold italic";
-        read_only = " ";
-      };
-      character = {
-        vimcmd_symbol = "[❯](bold blue)";
-        vimcmd_visual_symbol = "[❯](bold purple)";
-        vimcmd_replace_symbol = "[❯](bold yellow)";
-        vimcmd_replace_one_symbol = "[❯](bold yellow)";
-      };
-      git_branch = {
-        symbol = " ";
-        format = "[$symbol$branch(:$remote_branch)]($style) ";
-      };
-    };
+    nix-direnv.enable = true;
   };
   programs.fish = {
     enable = true;
@@ -50,7 +29,6 @@
       grep = "rg";
       copy = "wl-copy";
       ":q" = "exit";
-      ":h" = "man";
       mkdir = "mkdir -p";
       nr = "sudo nixos-rebuild switch --flake ~/.dotfiles#kitaro";
       pm = "${lib.getExe pkgs.pulsemixer}";
@@ -62,81 +40,34 @@
     shellInit = ''
       set TTY1 (tty)
       [ "$TTY1" = "/dev/tty1" ] && exec sway
-      fish_config theme choose theme
 
       set fish_greeting
-      set -gx EDITOR (which nvim)
-      set -gx VISUAL $EDITOR
-      set -gx SUDO_EDITOR $EDITOR
-      set -gx MANPAGER "nvim +Man!"
+      fish_config theme choose theme
 
       ${lib.getExe pkgs.nix-your-shell} fish | source
       grc-rs --aliases --except=du,df | source
 
-      fish_vi_key_bindings
+      function __neovim_cwd_hook -v PWD
+          nvim --server $NVIM_LISTEN_SOCKET --remote-send "<C-\><C-n><cmd>tchdir $PWD<cr>i"
+      end
 
-      set -g fish_vi_force_cursor
-      set -g fish_cursor_default block
-      set -g fish_cursor_insert line
-      set -g fish_cursor_replace_one underscore
-      set -g fish_cursor_visual block
+      function ":e" 
+        nvim --server $NVIM_LISTEN_SOCKET --remote-send "<C-\><C-n><cmd>e $argv<cr>"
+      end
 
+      function ":h" 
+        nvim --server $NVIM_LISTEN_SOCKET --remote-send "<C-\><C-n><cmd>Man $argv<cr>"
+      end
 
-      set -g __auto_nix_develop 1
-
-      set -g __nix_develop_last_dir ""
-
-      function toggle-auto-nix-develop
-          if test "$__auto_nix_develop" -eq 1
-              set -g __auto_nix_develop 0
-              echo -e "automatic nix develop \033[1;32mdisabled\033[0m"
+      function fish_prompt
+          if test $status -eq 0
+              set_color ${colors.teal}
           else
-              set -g __auto_nix_develop 1
-              echo -e "automatic nix develop \033[1;32menabled\033[0m"
+              set_color ${colors.red}
           end
-      end
-
-      function __find_flake_root --argument dir
-          while test "$dir" != "/"
-              if test -f "$dir/flake.nix"
-                  echo "$dir"
-                  return 0
-              end
-              set dir (dirname "$dir")
-          end
-          return 1
-      end
-
-      function __auto_enter_nix_develop
-          if test "$__auto_nix_develop" -ne 1
-              return
-          end
-
-          if test "$PWD" = "$__nix_develop_last_dir"
-              return
-          end
-
-          if not string match -q "$HOME/projects/*" "$PWD"
-              return
-          end
-
-          set flake_root (__find_flake_root "$PWD")
-          if test -z "$flake_root"
-              return
-          end
-
-          if test -n "$IN_NIX_SHELL"
-              return
-          end
-
-          set -g __nix_develop_last_dir "$PWD"
-          exec nix develop "$flake_root"# -c fish
-      end
-
-      function __auto_nix_on_pwd --on-event fish_prompt
-          if test "$PWD" != "$__nix_develop_last_dir"
-              __auto_enter_nix_develop
-          end
+          echo " "
+          echo -n "λ "
+          set_color normal
       end
     '';
   };

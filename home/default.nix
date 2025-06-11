@@ -11,25 +11,15 @@
   ];
   home.stateVersion = "21.11";
   home.packages = with pkgs; [
-    wezterm
+    neovide
     luakit
-    airshipper
     ripgrep
     neofetch
     rink
     thokr
     fd
-    xq
-    bun
-    tlrc
-    theme
     extract
   ];
-  xdg.configFile."wezterm" = {
-    source = config.lib.file.mkOutOfStoreSymlink
-      "/home/marie/.dotfiles/configs/wezterm";
-    recursive = true;
-  };
   xdg.configFile."luakit" = {
     source = config.lib.file.mkOutOfStoreSymlink
       "/home/marie/.dotfiles/configs/luakit";

@@ -1,6 +1,6 @@
 { pkgs, lib, colors, ... }: {
   home = {
-    packages = with pkgs; [ mpv wl-clipboard xdg-utils ];
+    packages = with pkgs; [ wl-clipboard ];
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
       DISABLE_QT5_COMPAT = "0";
@@ -91,7 +91,8 @@
             lib.getExe pkgs.libnotify
           } -a "full screen captured" "saved to ~/screenshots" -t 888'';
 
-        "${mod}+Return" = "exec wezterm";
+        "${mod}+Return" =
+          "exec neovide -- --listen /tmp/nvim-$(date +%Y%m%d%H%M%S).pipe +term";
         "${mod}+d" = "exec luakit";
         "${mod}+n" = "exec ${pkgs.notifystatus}/bin/notifystatus";
 
@@ -161,9 +162,8 @@
         unfocused = style;
         urgent = style;
       };
-      seat = { "*".hide_cursor = "when-typing enable"; };
+      seat."*".hide_cursor = "when-typing enable";
       output = {
-        # "*".bg = "${../../configs/wallpaper.png} fill";
         "*".bg = "#${colors.mantle} solid_color";
         "eDP-1".scale = "1";
       };

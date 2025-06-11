@@ -14,7 +14,7 @@ settings.window.search_engines = {
 	ddg = "https://duckduckgo.com/?q=%s",
 	gh = "https://github.com/search?q=%s",
 	wiki = "https://en.wikipedia.org/wiki/Special:Search?search=%s",
-	yt = "https://youtube.com/search?q=%s",
+	yt = "https://inv.nadeko.net/search?q=%s",
 	reddit = "https://reddit.com/search?q=%s",
 	nix = "https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&type=packages&query=%s",
 	nhm = "https://github.com/nix-community/home-manager/search?q=%s",
@@ -32,20 +32,15 @@ settings.webview.cursive_font_family = "CartographCF Nerd Font"
 settings.webview.default_font_family = "CartographCF Nerd Font"
 settings.webview.enable_offline_web_application_cache = false
 settings.tablist.visibility = "never"
-settings.application.prefer_dark_mode = true
 settings.window.new_window_size = "1800x1400"
 settings.webview.enable_webgl = true
 settings.webview.zoom_level = 120
 settings.webview.enable_accelerated_2d_canvas = true
 settings.webview.enable_smooth_scrolling = true
 
-modes.remap_binds("normal", {
-	{ "y", "Y", true },
-})
-
 modes.add_binds("normal", {
 	{
-		"<Control-c>",
+		"y",
 		"Copy selected text.",
 		function()
 			luakit.selection.clipboard = luakit.selection.primary
@@ -54,6 +49,6 @@ modes.add_binds("normal", {
 })
 
 window.add_signal("build", function(w)
-	w.sbar.layout.margin_top = 5
-	w.sbar.layout.margin_bottom = 5
+	w.sbar.layout.margin_top = 6
+	w.sbar.layout.margin_bottom = 6
 end)
