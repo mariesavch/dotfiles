@@ -7,5 +7,5 @@ return {
       desc = "[hop]",
     },
   },
-  config = true,
+  opts = {},
 }

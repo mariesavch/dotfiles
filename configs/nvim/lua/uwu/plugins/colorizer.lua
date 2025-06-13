@@ -1,5 +1,5 @@
 return {
-  "NvChad/nvim-colorizer.lua",
+  "nvchad/nvim-colorizer.lua",
   event = { "BufReadPost", "BufNewFile" },
   opts = {
     filetypes = { "*", "!prompt", "!popup" },

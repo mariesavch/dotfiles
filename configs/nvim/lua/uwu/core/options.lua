@@ -1,6 +1,11 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+vim.g.loaded_ruby_provider = 0
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_python3_provier = 0
+vim.g.loaded_node_provier = 0
+
 vim.opt.autoindent = true
 vim.opt.autoread = true
 vim.opt.autowrite = true
@@ -82,7 +87,15 @@ vim.g.neovide_confirm_quit = false
 vim.fn.setenv("NVIM_LISTEN_SOCKET", vim.v.servername)
 
 vim.filetype.add({
+  extension = {
+    env = "dotenv",
+  },
+  filename = {
+    [".env"] = "dotenv",
+    ["env"] = "dotenv",
+  },
   pattern = {
     ["[jt]sconfig.*.json"] = "jsonc",
+    ["%.env%.[%w_.-]+"] = "dotenv",
   },
 })

@@ -1,6 +1,5 @@
 { colors, pkgs, inputs, lib, ... }: {
-  home.packages =
-    [ pkgs.fishPlugins.autopair inputs.grc-rs.packages.${pkgs.system}.default ];
+  home.packages = [ inputs.grc-rs.packages.${pkgs.system}.default ];
   programs.zoxide = {
     enable = true;
     enableFishIntegration = true;
@@ -33,7 +32,7 @@
       nr = "sudo nixos-rebuild switch --flake ~/.dotfiles#kitaro";
       pm = "${lib.getExe pkgs.pulsemixer}";
       bt = "${lib.getExe pkgs.bluetuith}";
-      ipinfo = "curl -s ipinfo.io | xq";
+      ipinfo = "curl -s ipinfo.io";
       c = "clear";
       g = "git";
     };
@@ -57,6 +56,10 @@
 
       function ":h" 
         nvim --server $NVIM_LISTEN_SOCKET --remote-send "<C-\><C-n><cmd>Man $argv<cr>"
+      end
+
+      function nrun
+        nix run nixpkgs#$argv
       end
 
       function fish_prompt

@@ -1,13 +1,12 @@
 { pkgs, config, ... }: {
   imports = [
-    ./cli/git.nix
-    ./cli/fish.nix
-    ./cli/neovim.nix
-    ./cli/himalaya.nix
-
-    ./desktop/gtk.nix
-    ./desktop/sway.nix
-    ./desktop/dunst.nix
+    ./git.nix
+    ./fish.nix
+    ./neovim.nix
+    ./himalaya.nix
+    ./gtk.nix
+    ./sway.nix
+    ./dunst.nix
   ];
   home.stateVersion = "21.11";
   home.packages = with pkgs; [

@@ -4,6 +4,52 @@ return {
   dependencies = {
     "nvim-tree/nvim-web-devicons",
     "neovim/nvim-lspconfig",
+    {
+      "linrongbin16/lsp-progress.nvim",
+      event = { "LspAttach", "LspDetach" },
+      opts = {
+        series_format = function(title)
+          local builder = {}
+
+          if type(title) == "string" and string.len(title) > 0 then
+            table.insert(builder, title:lower())
+          end
+
+          return table.concat(builder, " ")
+        end,
+        client_format = function(client_name, spinner, series_messages)
+          local messages = table.concat(series_messages, " ")
+
+          if string.len(messages) > 20 then
+            messages = messages:sub(1, 20) .. "..."
+          end
+
+          return #series_messages > 0 and ("[" .. messages .. "] " .. client_name .. " ") or nil
+        end,
+        format = function(client_messages)
+          local sign = ""
+
+          if #client_messages > 0 then
+            return sign .. " " .. table.concat(client_messages, " ")
+          end
+
+          if #require("lsp-progress.api").lsp_clients() > 0 then
+            local names = {}
+            for _, server in pairs(vim.lsp.get_clients({ bufnr = 0 })) do
+              table.insert(names, server.name)
+            end
+
+            if #names == 0 then
+              return ""
+            end
+
+            return ("%s %s "):format(sign, table.concat(names, " "))
+          end
+
+          return ""
+        end,
+      },
+    },
   },
   config = function()
     local heirline = require("heirline")
@@ -190,6 +236,42 @@ return {
         return conditions.buffer_not_empty() and conditions.buffer_not_term()
       end,
       hl = { bg = colors.mantle, fg = colors.surface2 },
+    }
+
+    local LspActive = {
+      condition = function()
+        return conditions.lsp_attached()
+      end,
+      update = { "LspAttach", "LspDetach" },
+      provider = function()
+        local names = {}
+        for _, server in pairs(vim.lsp.get_clients()) do
+          table.insert(names, server.name)
+        end
+
+        if #names == 0 then
+          return ""
+        end
+
+        return ("  %s "):format(table.concat(names, " "))
+      end,
+      hl = { bg = colors.mantle, fg = colors.surface2, bold = true, italic = false },
+    }
+    local LspProgress = {
+      provider = function()
+        return require("lsp-progress").progress()
+      end,
+      condition = function()
+        return conditions.lsp_attached()
+      end,
+      update = {
+        "User",
+        pattern = "LspProgressStatusUpdated",
+        callback = vim.schedule_wrap(function()
+          vim.cmd("redrawstatus")
+        end),
+      },
+      hl = { bg = colors.mantle, fg = colors.surface2, bold = true, italic = false },
     }
 
     local Diagnostics = {
@@ -456,6 +538,7 @@ return {
         FileNameBlock,
         Ruler,
         Align,
+        LspProgress,
         Diagnostics,
         Git,
         ViModeSepRight,

@@ -6,10 +6,7 @@
     ./locale.nix
     ./environment.nix
   ];
-  nixpkgs.overlays = [
-    (import ../../overlays/binscripts.nix)
-    inputs.neovim-nightly.overlays.default
-  ];
+  nixpkgs.overlays = [ (import ../../overlays/binscripts.nix) ];
 
   home-manager = {
     useGlobalPkgs = true;

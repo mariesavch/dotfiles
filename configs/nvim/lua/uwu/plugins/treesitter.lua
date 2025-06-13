@@ -1,10 +1,19 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
-  event = { "BufReadPost", "BufNewFile" },
+  event = "VeryLazy",
   dependencies = {
-    { "windwp/nvim-ts-autotag", config = true },
-    "nvim-treesitter/nvim-treesitter-textobjects",
+    {
+      "andymass/vim-matchup",
+      config = function()
+        vim.g.matchup_matchparen_offscreen = {}
+      end,
+    },
+    {
+      "Wansmer/treesj",
+      keys = { { "J", "<cmd>TSJToggle<cr>", desc = "[join] toggle" } },
+      opts = { use_default_keymaps = false, max_join_length = 150 },
+    },
   },
   config = function()
     local MAX_FILE_LINES = 5000
@@ -30,8 +39,6 @@ return {
         "gpg",
         "html",
         "http",
-        "javascript",
-        "jsdoc",
         "json",
         "json5",
         "jsonc",
@@ -47,12 +54,9 @@ return {
         "scss",
         "css",
         "toml",
-        "tsx",
-        "typescript",
         "vimdoc",
         "vim",
         "yaml",
-        "zig",
       },
       highlight = {
         enable = true,
@@ -74,24 +78,10 @@ return {
           node_decremental = "<c-backspace>",
         },
       },
-      textobjects = {
-        select = {
-          enable = true,
-          lookahead = true,
-          keymaps = {
-            ["ap"] = "@parameter.outer",
-            ["ip"] = "@parameter.inner",
-            ["ab"] = "@block.outer",
-            ["ib"] = "@block.inner",
-            ["af"] = "@function.outer",
-            ["if"] = "@function.inner",
-            ["ac"] = "@class.outer",
-            ["ic"] = "@class.inner",
-          },
-        },
-        move = { enable = false },
-      },
       indent = {
+        enable = true,
+      },
+      matchup = {
         enable = true,
       },
     })

@@ -1,5 +1,6 @@
 return {
-  "NeogitOrg/neogit",
+  "neogitorg/neogit",
+  cmd = "Neogit",
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-telescope/telescope.nvim",
@@ -7,7 +8,6 @@ return {
   opts = {
     disable_hint = true,
   },
-  cmd = "Neogit",
   keys = {
     {
       "<leader>gg",

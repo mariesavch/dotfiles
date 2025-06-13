@@ -1,5 +1,5 @@
 return {
-  "NotAShelf/direnv.nvim",
+  "notashelf/direnv.nvim",
   lazy = false,
   opts = {
     autoload_direnv = true,
