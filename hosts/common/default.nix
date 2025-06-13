@@ -38,10 +38,6 @@
     upower.enable = true;
     fstrim.enable = true;
     timesyncd.enable = true;
-
-    devmon.enable = true;
-    gvfs.enable = true;
-    udisks2.enable = true;
   };
 
   boot.loader = {
@@ -54,6 +50,5 @@
     memoryPercent = 100;
   };
 
-  programs.dconf.enable = true;
   programs.nix-ld.enable = true;
 }
