@@ -16,8 +16,8 @@
     }
   '';
   home.pointerCursor = {
-    name = "phinger-cursors-dark";
-    package = pkgs.phinger-cursors;
+    name = "Simp1e-Gruvbox-Light";
+    package = pkgs.simp1e-cursors;
     gtk.enable = true;
     size = 24;
   };

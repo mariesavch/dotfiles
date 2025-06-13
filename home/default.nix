@@ -1,4 +1,4 @@
-{ pkgs, config, ... }: {
+{ pkgs, ... }: {
   imports = [
     ./git.nix
     ./fish.nix
@@ -7,6 +7,7 @@
     ./gtk.nix
     ./sway.nix
     ./dunst.nix
+    ./luakit.nix
   ];
   home.stateVersion = "21.11";
   home.packages = with pkgs; [
@@ -19,9 +20,4 @@
     fd
     extract
   ];
-  xdg.configFile."luakit" = {
-    source = config.lib.file.mkOutOfStoreSymlink
-      "/home/marie/.dotfiles/configs/luakit";
-    recursive = true;
-  };
 }
