@@ -16,6 +16,8 @@
       border: 0px solid #${colors.base} !important;
       border-color: #${colors.base} !important;
       box-shadow: 0 0 0 0 #${colors.base} !important;
+      line-height: 1.7 !important;
+      font-family: CartographCF Nerd Font !important;
     }
   '';
 }

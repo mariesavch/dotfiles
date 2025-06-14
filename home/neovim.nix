@@ -4,6 +4,7 @@
     defaultEditor = true;
     withRuby = false;
     withPython3 = false;
+    withNodeJs = false;
     extraPackages = with pkgs; [
       stylua
       lua-language-server

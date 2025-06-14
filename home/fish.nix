@@ -1,9 +1,12 @@
-{ colors, pkgs, inputs, lib, ... }: {
-  home.packages = [ inputs.grc-rs.packages.${pkgs.system}.default ];
+{ colors, pkgs, lib, ... }: {
   programs.zoxide = {
     enable = true;
     enableFishIntegration = true;
     options = [ "--cmd cd" ];
+  };
+  programs.nix-your-shell = {
+    enable = true;
+    enableFishIntegration = true;
   };
   programs.direnv = {
     enable = true;
@@ -14,17 +17,17 @@
     shellAliases = {
       ll = "${lib.getExe pkgs.eza} --icons -l -s type -a --git";
       ls = "${lib.getExe pkgs.eza} --icons -s type -a --git";
-      tree = "${
-          lib.getExe pkgs.eza
-        } --icons -s type -a --git -T -I '.git|node_modules|.next'";
+      tree =
+        "${lib.getExe pkgs.eza} --icons -s type -a --git -T -I '.git|target'";
       top = "${lib.getExe pkgs.htop}";
       img = "${lib.getExe pkgs.timg}";
       cp = "${lib.getExe pkgs.xcp} -r";
       rm = "${lib.getExe pkgs.rip2}";
-      du = "grc-rs du -h";
-      df = "grc-rs df -h";
+      du = "du -h";
+      df = "df -h";
       iw = "iwctl station wlan0";
-      find = "fd";
+      find = "fd -H";
+      fd = "fd -H";
       grep = "rg";
       copy = "wl-copy";
       ":q" = "exit";
@@ -44,7 +47,6 @@
       fish_config theme choose theme
 
       ${lib.getExe pkgs.nix-your-shell} fish | source
-      grc-rs --aliases --except=du,df | source
 
       function __neovim_cwd_hook -v PWD
           nvim --server $NVIM_LISTEN_SOCKET --remote-send "<C-\><C-n><cmd>tchdir $PWD<cr>i"
@@ -56,10 +58,6 @@
 
       function ":h" 
         nvim --server $NVIM_LISTEN_SOCKET --remote-send "<C-\><C-n><cmd>Man $argv<cr>"
-      end
-
-      function nrun
-        nix run nixpkgs#$argv
       end
 
       function fish_prompt
@@ -103,9 +101,4 @@
     fish_pager_color_completion ${colors.text}
     fish_pager_color_description ${colors.overlay0}
   '';
-
-  xdg.configFile."grc-rs" = {
-    source = "${inputs.grc-rs.packages.${pkgs.system}.default}/etc/grc-rs";
-    recursive = true;
-  };
 }

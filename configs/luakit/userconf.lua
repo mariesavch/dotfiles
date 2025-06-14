@@ -11,18 +11,17 @@ end
 follow.pattern_maker = follow.pattern_styles.match_label
 
 settings.window.search_engines = {
-	ddg = "https://duckduckgo.com/?q=%s",
+	fg = "https://4get.bloat.cat/web?s=%s",
 	gh = "https://github.com/search?q=%s",
 	wiki = "https://en.wikipedia.org/wiki/Special:Search?search=%s",
-	yt = "https://inv.nadeko.net/search?q=%s",
-	reddit = "https://reddit.com/search?q=%s",
+	iv = "https://inv.nadeko.net/search?q=%s",
+	rl = "https://redlib.nadeko.net/search?q=%s",
 	nix = "https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&type=packages&query=%s",
 	nhm = "https://github.com/nix-community/home-manager/search?q=%s",
 	osm = "https://www.openstreetmap.org/search?query=%s",
 }
 
-settings.window.default_search_engine = "ddg"
-settings.webview.enable_webaudio = true
+settings.window.default_search_engine = "fg"
 settings.window.home_page = "luakit://newtab/"
 settings.webview.monospace_font_family = "CartographCF Nerd Font"
 settings.webview.pictograph_font_family = "CartographCF Nerd Font"
@@ -30,13 +29,12 @@ settings.webview.serif_font_family = "CartographCF Nerd Font"
 settings.webview.sans_serif_font_family = "CartographCF Nerd Font"
 settings.webview.cursive_font_family = "CartographCF Nerd Font"
 settings.webview.default_font_family = "CartographCF Nerd Font"
-settings.webview.enable_offline_web_application_cache = false
 settings.tablist.visibility = "never"
 settings.window.new_window_size = "1800x1400"
-settings.webview.enable_webgl = true
 settings.webview.zoom_level = 120
-settings.webview.enable_accelerated_2d_canvas = true
 settings.webview.enable_smooth_scrolling = true
+settings.application.enable_pdfjs = false
+settings.webview.enable_javascript = true
 
 modes.add_binds("normal", {
 	{

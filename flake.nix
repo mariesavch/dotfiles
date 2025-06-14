@@ -12,10 +12,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    grc-rs = {
-      url = "github:mariesavch/grc-rs";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
   outputs = { nixpkgs, home-manager, ... }@inputs:
     let

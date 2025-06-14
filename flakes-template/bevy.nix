@@ -37,7 +37,6 @@
               alsa-lib
               libudev-zero
               clang
-              sqlite
               fontconfig
               freetype
               libGL
