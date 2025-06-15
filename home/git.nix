@@ -12,14 +12,6 @@
         trustExitCode = false;
         prompt = true;
       };
-      diff = {
-        tool = "vimdiff";
-        guitool = "vimdiff";
-      };
-      merge = {
-        tool = "vimdiff";
-        conflictstyle = "diff3";
-      };
       push = {
         default = "current";
         autoSetupRemote = true;

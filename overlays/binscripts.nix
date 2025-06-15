@@ -33,19 +33,6 @@ final: prev: {
         -t 888 \
         -u low
   '';
-  kbdbrightness = let brightnessctl = prev.brightnessctl + "/bin/brightnessctl";
-  in prev.writeShellScriptBin "kbdbrightness" ''
-    #!/bin/sh
-
-    ${brightnessctl} "$@" --device='kbd_backlight'
-    brightness=$(echo $(($(${brightnessctl} --device='kbd_backlight' g) * 100 / $(${brightnessctl} --device='kbd_backlight' m))))
-
-    ${prev.libnotify}/bin/notify-send -r 69 \
-        -a "keyboard brightness" "currently at $brightness%" \
-        -h int:value:"$brightness" \
-        -t 888 \
-        -u low
-  '';
   notifystatus = prev.writeShellScriptBin "notifystatus" ''
     #!/bin/sh
 

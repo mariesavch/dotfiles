@@ -1,4 +1,4 @@
-{ colors, pkgs, ... }: {
+{ colors, ... }: {
   services.dunst = let
     style = {
       timeout = 8;
@@ -13,7 +13,7 @@
         follow = "mouse";
         width = 320;
         origin = "top-left";
-        notification_limit = 2;
+        notification_limit = 1;
         offset = "20x20";
         icon_position = "off";
         line_height = "8";
@@ -29,9 +29,6 @@
         format =
           "<span font_desc='CartographCF Nerd Font Heavy Italic 12' foreground='#${colors.text}'>%a</span>\\n%s%b";
         show_indicators = false;
-        mouse_left_click = "do_action";
-        mouse_middle_click = "close_all";
-        mouse_right_click = "close_current";
         ellipsize = "end";
         markup = "full";
       };

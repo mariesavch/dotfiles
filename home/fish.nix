@@ -12,6 +12,15 @@
     enable = true;
     nix-direnv.enable = true;
   };
+  programs.htop = {
+    enable = true;
+    package = pkgs.htop-vim;
+    settings = {
+      fields = [ 0 48 46 47 1 ];
+      screen_tabs = 0;
+      hide_function_bar = 2;
+    };
+  };
   programs.fish = {
     enable = true;
     shellAliases = {
@@ -19,10 +28,10 @@
       ls = "${lib.getExe pkgs.eza} --icons -s type -a --git";
       tree =
         "${lib.getExe pkgs.eza} --icons -s type -a --git -T -I '.git|target'";
-      top = "${lib.getExe pkgs.htop}";
       img = "${lib.getExe pkgs.timg}";
       cp = "${lib.getExe pkgs.xcp} -r";
       rm = "${lib.getExe pkgs.rip2}";
+      top = "htop";
       du = "du -h";
       df = "df -h";
       iw = "iwctl station wlan0";
