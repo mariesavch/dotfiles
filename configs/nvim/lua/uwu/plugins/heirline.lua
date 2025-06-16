@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-field
 return {
   "rebelot/heirline.nvim",
   event = "VeryLazy",
@@ -17,6 +18,7 @@ return {
 
           return table.concat(builder, " ")
         end,
+        ---@diagnostic disable-next-line: unused-local
         client_format = function(client_name, spinner, series_messages)
           local messages = table.concat(series_messages, " ")
 
@@ -238,25 +240,6 @@ return {
       hl = { bg = colors.mantle, fg = colors.surface2 },
     }
 
-    local LspActive = {
-      condition = function()
-        return conditions.lsp_attached()
-      end,
-      update = { "LspAttach", "LspDetach" },
-      provider = function()
-        local names = {}
-        for _, server in pairs(vim.lsp.get_clients()) do
-          table.insert(names, server.name)
-        end
-
-        if #names == 0 then
-          return ""
-        end
-
-        return ("  %s "):format(table.concat(names, " "))
-      end,
-      hl = { bg = colors.mantle, fg = colors.surface2, bold = true, italic = false },
-    }
     local LspProgress = {
       provider = function()
         return require("lsp-progress").progress()
@@ -282,7 +265,7 @@ return {
         error_icon = " ",
         warn_icon = " ",
         info_icon = " ",
-        hint_icon = " ",
+        hint_icon = " ",
       },
       init = function(self)
         self.errors = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.ERROR })

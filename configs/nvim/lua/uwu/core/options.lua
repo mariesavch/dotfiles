@@ -29,7 +29,7 @@ vim.opt.fillchars = {
   horizup = " ",
   horizdown = " ",
   eob = " ",
-  msgsep = "‾",
+  msgsep = " ",
   diff = " ",
 }
 vim.opt.formatoptions = "jcroqlnt"

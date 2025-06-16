@@ -18,16 +18,40 @@ end
 vim.diagnostic.config({
   virtual_text = {
     source = false,
-    prefix = "▎",
+    prefix = "",
     format = function(diagnostic)
-      return string.format("%s ", diagnostic.message)
+      local sign = ""
+
+      if diagnostic.severity == vim.diagnostic.severity.ERROR then
+        sign = ""
+      elseif diagnostic.severity == vim.diagnostic.severity.WARN then
+        sign = ""
+      elseif diagnostic.severity == vim.diagnostic.severity.INFO then
+        sign = ""
+      elseif diagnostic.severity == vim.diagnostic.severity.HINT then
+        sign = ""
+      end
+
+      return string.format("%s %s ", sign, diagnostic.message)
     end,
   },
   float = {
     source = false,
     header = "",
     format = function(diagnostic)
-      return string.format("%s ", diagnostic.message)
+      local sign = ""
+
+      if diagnostic.severity == vim.diagnostic.severity.ERROR then
+        sign = ""
+      elseif diagnostic.severity == vim.diagnostic.severity.WARN then
+        sign = ""
+      elseif diagnostic.severity == vim.diagnostic.severity.INFO then
+        sign = ""
+      elseif diagnostic.severity == vim.diagnostic.severity.HINT then
+        sign = ""
+      end
+
+      return string.format("%s %s ", sign, diagnostic.message)
     end,
   },
   signs = {
@@ -82,12 +106,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end,
 })
 
-vim.lsp.enable({
-  "rust_analyzer",
-  "taplo",
-  "nil_ls",
-  "lua_ls",
-})
+vim.lsp.enable({ "rust_analyzer", "taplo", "nil_ls", "lua_ls" })
 
 vim.lsp.config("lua_ls", {
   settings = {

@@ -12,10 +12,6 @@ return {
   },
   opts = {
     formatters_by_ft = {
-      json = { "dprint" },
-      jsonc = { "dprint" },
-      markdown = { "dprint" },
-      fish = { "fish_indent" },
       lua = { "stylua" },
       nix = { "nixfmt" },
       rust = { "rustfmt" },

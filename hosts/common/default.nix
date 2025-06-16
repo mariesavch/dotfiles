@@ -1,4 +1,4 @@
-{ inputs, colors, ... }: {
+{ inputs, colors, pkgs, lib, ... }: {
   imports = [
     ./console.nix
     ./networking.nix
@@ -31,6 +31,12 @@
     };
   };
 
+  environment = {
+    systemPackages = with pkgs; [ gnused curl ];
+    defaultPackages = lib.mkForce [ ];
+  };
+  fonts.packages = with pkgs; [ noto-fonts-monochrome-emoji ];
+
   security.sudo.wheelNeedsPassword = false;
 
   services = {
@@ -38,6 +44,7 @@
     upower.enable = true;
     fstrim.enable = true;
     timesyncd.enable = true;
+    nscd.enable = lib.mkForce true;
   };
 
   boot.loader = {
@@ -50,8 +57,6 @@
     memoryPercent = 100;
   };
 
-  programs = {
-    dconf.enable = true;
-    nix-ld.enable = true;
-  };
+  programs.command-not-found.enable = false;
+  xdg.icons.enable = true;
 }

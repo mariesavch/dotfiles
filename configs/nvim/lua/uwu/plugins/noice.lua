@@ -1,9 +1,7 @@
 return {
   "folke/noice.nvim",
   event = "VeryLazy",
-  dependencies = {
-    "MunifTanjim/nui.nvim",
-  },
+  dependencies = "muniftanjim/nui.nvim",
   opts = {
     lsp = {
       override = {

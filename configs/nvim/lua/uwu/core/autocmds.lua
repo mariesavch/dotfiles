@@ -16,13 +16,6 @@ autocmd("TermOpen", {
   end,
 })
 
-autocmd("FileType", {
-  pattern = "markdown",
-  callback = function()
-    vim.opt_local.spell = true
-  end,
-})
-
 autocmd("VimResized", {
   group = vim.api.nvim_create_augroup("ResizeSplit", { clear = true }),
   callback = function()

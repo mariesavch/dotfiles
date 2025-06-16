@@ -126,6 +126,8 @@ return {
             CratesNvimPopupTransitive = { fg = colors.teal, style = { "bold" } },
             CratesNvimPopupLabel = { fg = colors.blue, style = { "bold" } },
 
+            HimalayaUnseen = { fg = colors.mauve, style = { "bold" } },
+
             Todo = { fg = colors.mauve, bg = colors.none, style = { "bold" } },
             ["@comment.error"] = { fg = colors.red, bg = colors.none, style = { "bold" } },
             ["@comment.warning"] = { fg = colors.yellow, bg = colors.none, style = { "bold" } },

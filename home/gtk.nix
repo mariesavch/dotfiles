@@ -5,16 +5,21 @@
       name = "CartographCF Nerd Font";
       size = 12;
     };
+    gtk3.extraCss = ''
+      decoration {
+          border-radius: 0px 0px 0px 0px;
+          border-width: 0px;
+          box-shadow: none;
+      }
+
+      decoration:backdrop {
+          border-radius: 0px 0px 0px 0px;
+          border-width: 0px;
+          box-shadow: none;
+      }
+    '';
     gtk2.configLocation = "/home/marie/.config/gtk-2.0/gtkrc";
   };
-  xdg.configFile."gtk-3.0/gtk.css".text = ''
-    window decoration {
-      box-shadow: none;
-    }
-    .titlebar, .titlebar .background {
-      border-radius: 0px 0px 0px 0px;
-    }
-  '';
   home.pointerCursor = {
     name = "Simp1e-Gruvbox-Light";
     package = pkgs.simp1e-cursors;

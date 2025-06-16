@@ -10,5 +10,5 @@
     ./luakit.nix
   ];
   home.stateVersion = "21.11";
-  home.packages = with pkgs; [ neovide luakit fd ripgrep rink thokr ];
+  home.packages = with pkgs; [ neovide luakit fd ripgrep ];
 }

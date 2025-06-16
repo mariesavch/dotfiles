@@ -19,6 +19,11 @@
       fields = [ 0 48 46 47 1 ];
       screen_tabs = 0;
       hide_function_bar = 2;
+      header_layout = "two_50_50";
+      column_meters_0 = "LeftCPUs Memory Tasks";
+      column_meter_modes_0 = "1 1 2";
+      column_meters_1 = "RightCPUs Swap LoadAverage";
+      column_meter_modes_1 = "1 1 2";
     };
   };
   programs.fish = {
@@ -28,15 +33,14 @@
       ls = "${lib.getExe pkgs.eza} --icons -s type -a --git";
       tree =
         "${lib.getExe pkgs.eza} --icons -s type -a --git -T -I '.git|target'";
-      img = "${lib.getExe pkgs.timg}";
       cp = "${lib.getExe pkgs.xcp} -r";
       rm = "${lib.getExe pkgs.rip2}";
       top = "htop";
       du = "du -h";
       df = "df -h";
       iw = "iwctl station wlan0";
-      find = "fd -H";
-      fd = "fd -H";
+      find = "fd -H --color never";
+      fd = "fd -H --color never";
       grep = "rg";
       copy = "wl-copy";
       ":q" = "exit";
@@ -44,7 +48,7 @@
       nr = "sudo nixos-rebuild switch --flake ~/.dotfiles#kitaro";
       pm = "${lib.getExe pkgs.pulsemixer}";
       bt = "${lib.getExe pkgs.bluetuith}";
-      ipinfo = "curl -s ipinfo.io";
+      ff = "${lib.getExe pkgs.fastfetch} --config neofetch.jsonc";
       c = "clear";
       g = "git";
     };

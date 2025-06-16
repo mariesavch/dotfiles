@@ -30,7 +30,6 @@ require("lazy").setup({
   { import = "uwu.plugins.conform" },
   { import = "uwu.plugins.himalaya" },
   { import = "uwu.plugins.crates" },
-  { import = "uwu.plugins.minty" },
   { import = "uwu.plugins.neogit" },
   { import = "uwu.plugins.highlight-undo" },
   { import = "uwu.plugins.term-edit" },

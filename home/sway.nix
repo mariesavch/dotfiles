@@ -43,30 +43,6 @@
         "${mod}+d" = "exec luakit";
         "${mod}+n" = "exec ${pkgs.notifystatus}/bin/notifystatus";
 
-        "${mod}+p" = ''
-          exec ${lib.getExe pkgs.grim} -g "$(${
-            lib.getExe pkgs.slurp
-          } -b ${colors.mantle}80 -c 00000000)" -| wl-copy -t image/png && ${
-            lib.getExe pkgs.libnotify
-          } -a "screenshot captured" "copied to clipboard" -t 888'';
-        "${mod}+Shift+p" = ''
-          exec ${lib.getExe pkgs.grim} -c - | wl-copy -t image/png  && ${
-            lib.getExe pkgs.libnotify
-          } -a "full screen captured" "copied to clipboard" -t 888'';
-
-        "${mod}+Alt+p" = ''
-          exec ${lib.getExe pkgs.grim} -g "$(${
-            lib.getExe pkgs.slurp
-          } -b ${colors.mantle}80 -c 00000000)" ~/pictures/screenshots/$(date "+%Y%m%d"_"%Hh%Mm%Ss"_grim).png && ${
-            lib.getExe pkgs.libnotify
-          } -a "screenshot captured" "saved to ~/pictures/screenshots" -t 888'';
-        "${mod}+Shift+Alt+p" = ''
-          exec ${
-            lib.getExe pkgs.grim
-          } -c ~/pictures/screenshots/$(date "+%Y%m%d"_"%Hh%Mm%Ss"_grim).png && ${
-            lib.getExe pkgs.libnotify
-          } -a "full screen captured" "saved to ~/pictures/screenshots" -t 888'';
-
         "XF86AudioMute" = "exec ${pkgs.volume}/bin/volume sset Master toggle";
         "XF86AudioRaiseVolume" =
           "exec ${pkgs.volume}/bin/volume sset Master 5%+";

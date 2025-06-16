@@ -4,9 +4,6 @@ return {
   build = "nix run .#build-plugin",
   dependencies = {
     "rafamadriz/friendly-snippets",
-    "ribru17/blink-cmp-spell",
-    "hrsh7th/cmp-calc",
-    { "saghen/blink.compat", opts = {} },
     { "xzbdmw/colorful-menu.nvim", opts = {} },
   },
   opts = {
@@ -102,24 +99,7 @@ return {
       },
     },
     sources = {
-      default = { "lsp", "path", "snippets", "buffer", "calc" },
-      per_filetype = {
-        markdown = { inherit_defaults = true, "spell" },
-      },
-      providers = {
-        calc = {
-          name = "calc",
-          module = "blink.compat.source",
-          score_offset = -3,
-        },
-        spell = {
-          name = "Spell",
-          module = "blink-cmp-spell",
-          opts = {
-            max_entries = 10,
-          },
-        },
-      },
+      default = { "lsp", "path", "snippets", "buffer" },
     },
     cmdline = {
       keymap = { preset = "inherit" },

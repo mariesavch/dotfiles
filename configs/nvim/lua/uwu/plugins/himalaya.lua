@@ -1,6 +1,6 @@
 return {
   "pimalaya/himalaya-vim",
-  dependencies = { "nvim-telescope/telescope.nvim" },
+  dependencies = "nvim-telescope/telescope.nvim",
   lazy = true,
   keys = {
     {
