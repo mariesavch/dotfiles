@@ -56,26 +56,6 @@
         "type": "github"
       }
     },
-    "nixos-super-minimal": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1604287146,
-        "narHash": "sha256-warPPkERHSJ0QKkWEcDstAtN76d/ZXuISxLWehhouas=",
-        "owner": "kisik21",
-        "repo": "nixos-super-minimal",
-        "rev": "b4bf876babb3913f1d3a667de453315c3859bcf7",
-        "type": "github"
-      },
-      "original": {
-        "owner": "kisik21",
-        "repo": "nixos-super-minimal",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1750090126,
@@ -95,7 +75,6 @@
       "inputs": {
         "home-manager": "home-manager",
         "nixos-apple-silicon": "nixos-apple-silicon",
-        "nixos-super-minimal": "nixos-super-minimal",
         "nixpkgs": "nixpkgs"
       }
     }

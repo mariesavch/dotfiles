@@ -31,10 +31,7 @@
     };
   };
 
-  environment = {
-    systemPackages = with pkgs; [ gnused curl openssh ];
-    defaultPackages = lib.mkForce [ ];
-  };
+  environment.defaultPackages = lib.mkForce [ ];
   fonts.packages = with pkgs; [ noto-fonts-monochrome-emoji ];
 
   security.sudo.wheelNeedsPassword = false;
@@ -44,7 +41,6 @@
     upower.enable = true;
     fstrim.enable = true;
     timesyncd.enable = true;
-    nscd.enable = lib.mkForce true;
   };
 
   boot.loader = {
@@ -57,6 +53,8 @@
     memoryPercent = 100;
   };
 
-  programs.command-not-found.enable = false;
-  xdg.icons.enable = true;
+  programs = {
+    dconf.enable = true;
+    command-not-found.enable = false;
+  };
 }

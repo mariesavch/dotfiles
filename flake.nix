@@ -8,10 +8,6 @@
       url = "github:nix-community/nixos-apple-silicon";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixos-super-minimal = {
-      url = "github:kisik21/nixos-super-minimal";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -55,7 +51,6 @@
           ./hosts/kitaro
           ./hosts/common
           home-manager.nixosModules.home-manager
-          inputs.nixos-super-minimal.nixosModule
         ];
       };
     };
