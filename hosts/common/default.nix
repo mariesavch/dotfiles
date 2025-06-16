@@ -32,7 +32,7 @@
   };
 
   environment = {
-    systemPackages = with pkgs; [ gnused curl ];
+    systemPackages = with pkgs; [ gnused curl openssh ];
     defaultPackages = lib.mkForce [ ];
   };
   fonts.packages = with pkgs; [ noto-fonts-monochrome-emoji ];
