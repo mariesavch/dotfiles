@@ -8,10 +8,6 @@
     enable = true;
     enableFishIntegration = true;
   };
-  programs.direnv = {
-    enable = true;
-    nix-direnv.enable = true;
-  };
   programs.htop = {
     enable = true;
     package = pkgs.htop-vim;
@@ -29,28 +25,25 @@
   programs.fish = {
     enable = true;
     shellAliases = {
-      ll = "${lib.getExe pkgs.eza} --icons -l -s type -a --git";
-      ls = "${lib.getExe pkgs.eza} --icons -s type -a --git";
-      tree =
-        "${lib.getExe pkgs.eza} --icons -s type -a --git -T -I '.git|target'";
-      cp = "${lib.getExe pkgs.xcp} -r";
-      rm = "${lib.getExe pkgs.rip2}";
-      top = "htop";
+      cp = "cp -r";
+      rm = "rm -r";
       du = "du -h";
       df = "df -h";
       iw = "iwctl station wlan0";
-      find = "fd -H --color never";
-      fd = "fd -H --color never";
-      grep = "rg";
+      nr = "sudo nixos-rebuild switch --flake ~/.dotfiles#kitaro";
+      ll = "${lib.getExe pkgs.eza} --icons -l -s type -a --git";
+      ls = "${lib.getExe pkgs.eza} --icons -s type -a --git";
+      bt = "${lib.getExe pkgs.bluetui}";
+      c = "clear";
+      g = "git";
+      top = "htop";
+      tree =
+        "${lib.getExe pkgs.eza} --icons -s type -a --git -T -I '.git|target'";
+      find = "${lib.getExe pkgs.fd} -H --color never";
+      grep = "${lib.getExe pkgs.ripgrep}";
       copy = "wl-copy";
       ":q" = "exit";
       mkdir = "mkdir -p";
-      nr = "sudo nixos-rebuild switch --flake ~/.dotfiles#kitaro";
-      pm = "${lib.getExe pkgs.pulsemixer}";
-      bt = "${lib.getExe pkgs.bluetuith}";
-      ff = "${lib.getExe pkgs.fastfetch} --config neofetch.jsonc";
-      c = "clear";
-      g = "git";
     };
     shellInit = ''
       set TTY1 (tty)
@@ -58,8 +51,6 @@
 
       set fish_greeting
       fish_config theme choose theme
-
-      ${lib.getExe pkgs.nix-your-shell} fish | source
 
       function __neovim_cwd_hook -v PWD
           nvim --server $NVIM_LISTEN_SOCKET --remote-send "<C-\><C-n><cmd>tchdir $PWD<cr>i"

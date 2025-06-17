@@ -6,7 +6,7 @@
     ./locale.nix
     ./environment.nix
   ];
-  nixpkgs.overlays = [ (import ../../overlays/binscripts.nix) ];
+  nixpkgs.overlays = [ (import ../../overlays/scripts.nix) ];
 
   home-manager = {
     useGlobalPkgs = true;

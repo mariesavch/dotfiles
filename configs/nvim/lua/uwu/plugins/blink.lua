@@ -1,7 +1,7 @@
 return {
   "saghen/blink.cmp",
+  version = "v1.*",
   event = { "InsertEnter", "CmdlineEnter" },
-  build = "nix run .#build-plugin",
   dependencies = {
     "rafamadriz/friendly-snippets",
     { "xzbdmw/colorful-menu.nvim", opts = {} },

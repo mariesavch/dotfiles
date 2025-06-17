@@ -1,15 +1,6 @@
 return {
   "stevearc/conform.nvim",
   event = { "BufReadPost", "BufNewFile", "BufWritePre" },
-  keys = {
-    {
-      "<leader>lf",
-      function()
-        require("conform").format()
-      end,
-      desc = "[lsp] format",
-    },
-  },
   opts = {
     formatters_by_ft = {
       lua = { "stylua" },

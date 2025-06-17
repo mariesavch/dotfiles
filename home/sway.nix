@@ -38,9 +38,10 @@
             "exec 'swaymsg move container to workspace ${toString i}'";
         }) (lib.range 0 9));
       in tagBinds // {
-        "${mod}+Return" =
-          "exec neovide -- --listen /tmp/nvim-$(date +%Y%m%d%H%M%S).pipe +term";
-        "${mod}+d" = "exec luakit";
+        "${mod}+Return" = "exec ${
+            lib.getExe pkgs.neovide
+          } -- --listen /tmp/nvim-$(date +%Y%m%d%H%M%S).pipe +term";
+        "${mod}+d" = "exec ${lib.getExe pkgs.luakit}";
         "${mod}+n" = "exec ${pkgs.notifystatus}/bin/notifystatus";
 
         "XF86AudioMute" = "exec ${pkgs.volume}/bin/volume sset Master toggle";

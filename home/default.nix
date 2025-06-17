@@ -1,4 +1,5 @@
 { pkgs, ... }: {
+  home.stateVersion = "21.11";
   imports = [
     ./git.nix
     ./fish.nix
@@ -9,6 +10,5 @@
     ./dunst.nix
     ./luakit.nix
   ];
-  home.stateVersion = "21.11";
-  home.packages = with pkgs; [ neovide luakit fd ripgrep ];
+  home.packages = with pkgs; [ gcc rustc cargo rustPackages.clippy ];
 }

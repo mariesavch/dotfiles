@@ -9,7 +9,6 @@ return {
       { "<leader>g", group = "[git]" },
       { "<leader>l", group = "[lsp]" },
       { "<leader>v", group = "[note]" },
-      { "<leader>d", group = "[direnv]" },
     })
 
     wk.setup({

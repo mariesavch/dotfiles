@@ -20,7 +20,6 @@ require("lazy").setup({
   { import = "uwu.plugins.icons" },
   { import = "uwu.plugins.gitsigns" },
   { import = "uwu.plugins.heirline" },
-  { import = "uwu.plugins.direnv" },
   { import = "uwu.plugins.noice" },
   { import = "uwu.plugins.surround" },
   { import = "uwu.plugins.telescope" },
