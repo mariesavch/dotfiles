@@ -14,6 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   { import = "uwu.plugins.pairs" },
   { import = "uwu.plugins.theme" },
+  { import = "uwu.plugins.lsp" },
   { import = "uwu.plugins.blink" },
   { import = "uwu.plugins.colorizer" },
   { import = "uwu.plugins.comment" },

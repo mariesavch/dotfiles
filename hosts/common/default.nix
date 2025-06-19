@@ -7,6 +7,7 @@
     ./environment.nix
   ];
   nixpkgs.overlays = [ (import ../../overlays/scripts.nix) ];
+  fonts.packages = with pkgs; [ noto-fonts-monochrome-emoji ];
 
   home-manager = {
     useGlobalPkgs = true;
@@ -31,9 +32,6 @@
     };
   };
 
-  environment.defaultPackages = lib.mkForce [ ];
-  fonts.packages = with pkgs; [ noto-fonts-monochrome-emoji ];
-
   security.sudo.wheelNeedsPassword = false;
 
   services = {
@@ -45,7 +43,7 @@
 
   boot.loader = {
     systemd-boot.enable = true;
-    timeout = 0;
+    timeout = 2;
   };
 
   zramSwap = {

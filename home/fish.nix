@@ -34,6 +34,7 @@
       ll = "${lib.getExe pkgs.eza} --icons -l -s type -a --git";
       ls = "${lib.getExe pkgs.eza} --icons -s type -a --git";
       bt = "${lib.getExe pkgs.bluetui}";
+      ff = "${lib.getExe pkgs.fastfetch} -c neofetch.jsonc";
       c = "clear";
       g = "git";
       top = "htop";
@@ -56,7 +57,7 @@
           nvim --server $NVIM_LISTEN_SOCKET --remote-send "<C-\><C-n><cmd>tchdir $PWD<cr>i"
       end
 
-      function ":e" 
+      function vim 
         nvim --server $NVIM_LISTEN_SOCKET --remote-send "<C-\><C-n><cmd>e $argv<cr>"
       end
 
