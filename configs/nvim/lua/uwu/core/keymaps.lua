@@ -8,13 +8,7 @@ map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "[search] clear" })
 
 map("n", "<leader>p", "<cmd>:Lazy<cr>", { desc = "[lazy]" })
 
-map("n", "<leader>vn", "<cmd>e ~/notes/note.md<cr>", { desc = "[note]" })
-map(
-  "n",
-  "<leader>vj",
-  string.format("<cmd>e ~/.catgirljournal/%s.md<cr>", os.date("%Y-%m-%d")),
-  { desc = "[note] journal" }
-)
+map("n", "<leader>v", "<cmd>e ~/notes/note.md<cr>", { desc = "[note]" })
 
 map("n", "<A-->", "<C-w>s", { desc = "[window] split" })
 map("n", "<A-\\>", "<C-w>v", { desc = "[window] vsplit" })

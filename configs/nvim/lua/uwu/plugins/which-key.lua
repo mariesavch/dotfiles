@@ -8,7 +8,6 @@ return {
       { "<leader>f", group = "[telescope]" },
       { "<leader>g", group = "[git]" },
       { "<leader>l", group = "[lsp]" },
-      { "<leader>v", group = "[note]" },
     })
 
     wk.setup({
