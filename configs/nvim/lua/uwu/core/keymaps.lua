@@ -3,6 +3,8 @@ local map = vim.keymap.set
 map("n", "<leader>q", "<cmd>bd<cr>", { desc = "[buffer] close current" })
 map("n", "<leader>Q", "<cmd>%bd|e#|bd#<cr>", { desc = "[buffer] close other" })
 map("n", "<A-n>", "<cmd>tabnew<cr>", { desc = "[tab] new" })
+map("n", "[t", "<cmd>tabprevious<cr>", { desc = "[tab] previous" })
+map("n", "]t", "<cmd>tabnext<cr>", { desc = "[tab] next" })
 
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "[search] clear" })
 

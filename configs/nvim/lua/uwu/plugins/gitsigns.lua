@@ -4,11 +4,11 @@ return {
   dependencies = "nvim-lua/plenary.nvim",
   opts = {
     signs = {
-      add = { text = "▎" },
-      change = { text = "▎" },
+      add = { text = "▍" },
+      change = { text = "▍" },
       delete = { text = "" },
       topdelete = { text = "" },
-      changedelete = { text = "▎" },
+      changedelete = { text = "▍" },
       untracked = { text = " " },
     },
     current_line_blame = true,
