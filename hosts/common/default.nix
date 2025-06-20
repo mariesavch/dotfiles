@@ -1,4 +1,4 @@
-{ inputs, colors, pkgs, lib, ... }: {
+{ inputs, colors, pkgs, ... }: {
   imports = [
     ./console.nix
     ./networking.nix
@@ -44,11 +44,6 @@
   boot.loader = {
     systemd-boot.enable = true;
     timeout = 2;
-  };
-
-  zramSwap = {
-    enable = true;
-    memoryPercent = 100;
   };
 
   programs = {
