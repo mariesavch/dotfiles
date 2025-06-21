@@ -14,7 +14,6 @@ settings.window.search_engines = {
 	fg = "https://4get.bloat.cat/web?s=%s",
 	gh = "https://github.com/search?q=%s",
 	wiki = "https://en.wikipedia.org/wiki/Special:Search?search=%s",
-	iv = "https://inv.nadeko.net/search?q=%s",
 	rl = "https://redlib.nadeko.net/search?q=%s",
 	nix = "https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&type=packages&query=%s",
 	nhm = "https://github.com/nix-community/home-manager/search?q=%s",
