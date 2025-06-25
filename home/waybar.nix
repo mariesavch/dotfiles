@@ -9,7 +9,7 @@
       height = 68;
       modules-left = [ "sway/workspaces" ];
       modules-center = [ ];
-      modules-right = [ "wireplumber" "backlight" "battery" "clock" ];
+      modules-right = [ "wireplumber" "backlight" "upower" "clock" ];
       "sway/workspaces" = {
         disable-scroll = true;
         disable-click = true;
@@ -31,14 +31,10 @@
           "<span font_desc='CartographCF Nerd Font Heavy Italic' color='#${colors.mauve}' text_transform='lowercase'>{:%A, %d %B %H:%M}</span>";
         tooltip = false;
       };
-      battery = {
+      upower = {
         format =
-          "<span font_desc='CartographCF Nerd Font Heavy Italic' color='#${colors.mauve}'>bat</span> {capacity}%";
-        format-critical =
-          "<span font_desc='CartographCF Nerd Font Heavy Italic' color='#${colors.red}'>bat</span> {capacity}%";
-        format-charging =
-          "<span font_desc='CartographCF Nerd Font Heavy Italic' color='#${colors.mauve}'>bat [ac]</span> {capacity}%";
-        states = { critical = 30; };
+          "<span font_desc='CartographCF Nerd Font Heavy Italic' color='#${colors.mauve}'>bat</span> {percentage}";
+        show-icon = false;
         interval = 5;
         tooltip = false;
       };
