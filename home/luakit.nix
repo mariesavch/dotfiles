@@ -8,7 +8,7 @@
   # but it makes web just pretty(i hate webdevs)
   xdg.dataFile."luakit/styles/style.css".text = ''
     /* i really want this to be global */ 
-    *, body, :root, ::after {
+    *, body, :root, ::after, ::placeholder {
       background-color: #${colors.base} !important;
       background: #${colors.base} !important;
       color: #${colors.text} !important;
