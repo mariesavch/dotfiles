@@ -27,7 +27,10 @@
           pointer_accel = "0.47";
         };
       };
-      bars = lib.mkForce [ ];
+      bars = [{
+        position = "top";
+        command = "waybar";
+      }];
       defaultWorkspace = "workspace 1";
       keybindings = let
         mod = "Mod4";
@@ -42,32 +45,30 @@
             lib.getExe pkgs.neovide
           } -- --listen /tmp/nvim-$(date +%Y%m%d%H%M%S).pipe +term";
         "${mod}+d" = "exec ${lib.getExe pkgs.luakit}";
-        "${mod}+n" = "exec ${pkgs.notifystatus}/bin/notifystatus";
 
-        "XF86AudioMute" = "exec ${pkgs.volume}/bin/volume sset Master toggle";
+        "XF86AudioMute" =
+          "exec ${pkgs.alsa-utils}/bin/amixer sset Master toggle";
         "XF86AudioRaiseVolume" =
-          "exec ${pkgs.volume}/bin/volume sset Master 5%+";
+          "exec ${pkgs.alsa-utils}/bin/amixer sset Master 5%+";
         "XF86AudioLowerVolume" =
-          "exec ${pkgs.volume}/bin/volume sset Master 5%-";
+          "exec ${pkgs.alsa-utils}/bin/amixer sset Master 5%-";
 
         "${mod}+XF86AudioRaiseVolume" =
-          "exec ${pkgs.volume}/bin/volume sset Master 1%+";
+          "exec ${pkgs.alsa-utils}/bin/amixer sset Master 1%+";
         "${mod}+XF86AudioLowerVolume" =
-          "exec ${pkgs.volume}/bin/volume sset Master 1%-";
+          "exec ${pkgs.alsa-utils}/bin/amixer sset Master 1%-";
 
         "XF86AudioNext" = "exec ${lib.getExe pkgs.playerctl} next";
         "XF86AudioPrev" = "exec ${lib.getExe pkgs.playerctl} previous";
         "XF86AudioPlay" = "exec ${lib.getExe pkgs.playerctl} play-pause";
 
-        "XF86MonBrightnessDown" =
-          "exec ${pkgs.brightness}/bin/brightness set 5%-";
-        "XF86MonBrightnessUp" =
-          "exec ${pkgs.brightness}/bin/brightness set 5%+";
+        "XF86MonBrightnessDown" = "exec ${lib.getExe pkgs.brightnessctl} s 5%-";
+        "XF86MonBrightnessUp" = "exec ${lib.getExe pkgs.brightnessctl} s 5%+";
 
         "${mod}+XF86MonBrightnessDown" =
-          "exec ${pkgs.brightness}/bin/brightness set 1%-";
+          "exec ${lib.getExe pkgs.brightnessctl} s 1%-";
         "${mod}+XF86MonBrightnessUp" =
-          "exec ${pkgs.brightness}/bin/brightness set 1%+";
+          "exec ${lib.getExe pkgs.brightnessctl} s 1%+";
 
         "${mod}+q" = "kill";
         "${mod}+r" = ''mode "resize"'';

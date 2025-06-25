@@ -6,7 +6,6 @@
     ./locale.nix
     ./environment.nix
   ];
-  nixpkgs.overlays = [ (import ../../overlays/scripts.nix) ];
   fonts.packages = with pkgs; [ noto-fonts-monochrome-emoji ];
 
   home-manager = {
