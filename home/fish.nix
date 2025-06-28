@@ -1,4 +1,5 @@
-{ colors, pkgs, lib, ... }: {
+{ colors, pkgs, lib, inputs, ... }: {
+  home.packages = [ inputs.grc-rs.packages.${pkgs.system}.default ];
   programs.zoxide = {
     enable = true;
     enableFishIntegration = true;
@@ -27,8 +28,8 @@
     shellAliases = {
       cp = "cp -r";
       rm = "rm -r";
-      du = "du -h";
-      df = "df -h";
+      du = "grc-rs du -h";
+      df = "grc-rs df -h";
       iw = "iwctl station wlan0";
       nr = "sudo nixos-rebuild switch --flake ~/.dotfiles#kitaro";
       ll = "${lib.getExe pkgs.eza} --icons -l -s type -a --git";
@@ -52,6 +53,7 @@
 
       set fish_greeting
       fish_config theme choose theme
+      grc-rs --aliases --except=du,df | source
 
       function __neovim_cwd_hook -v PWD
           nvim --server $NVIM_LISTEN_SOCKET --remote-send "<C-\><C-n><cmd>tchdir $PWD<cr>i"
@@ -105,4 +107,8 @@
     fish_pager_color_completion ${colors.text}
     fish_pager_color_description ${colors.overlay0}
   '';
+  xdg.configFile."grc-rs" = {
+    source = "${inputs.grc-rs.packages.${pkgs.system}.default}/etc/grc-rs";
+    recursive = true;
+  };
 }

@@ -15,6 +15,26 @@
         "type": "github"
       }
     },
+    "grc-rs": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1708537354,
+        "narHash": "sha256-T38n1bryzQHCCvhwacMJKZiCuFnQRDZvwYZhVhaGQ9M=",
+        "owner": "mariesavch",
+        "repo": "grc-rs",
+        "rev": "8a6ef0843be6342c1d6bdc620df0d4dff700b4cc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mariesavch",
+        "repo": "grc-rs",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -73,6 +93,7 @@
     },
     "root": {
       "inputs": {
+        "grc-rs": "grc-rs",
         "home-manager": "home-manager",
         "nixos-apple-silicon": "nixos-apple-silicon",
         "nixpkgs": "nixpkgs"

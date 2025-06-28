@@ -28,4 +28,4 @@ map("n", "<A-S-l>", "<C-w>>", { desc = "[window] resize right" })
 map("n", "<leader>t", "<cmd>term<cr>", { desc = "[terminal] open" })
 
 map("t", "<esc>", "<C-\\><C-n>", { desc = "[terminal] normal" })
-map("t", "<S-esc>", "<esc>", { desc = "[terminal] esc" })
+map("t", "<c-esc>", "<esc>", { desc = "[terminal] esc" })
