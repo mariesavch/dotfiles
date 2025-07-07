@@ -21,7 +21,7 @@
     gtk2.configLocation = "/home/marie/.config/gtk-2.0/gtkrc";
   };
   home.pointerCursor = {
-    name = "Simp1e-Gruvbox-Light";
+    name = "Simp1e-Dark";
     package = pkgs.simp1e-cursors;
     gtk.enable = true;
     size = 24;

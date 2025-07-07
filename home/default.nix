@@ -7,8 +7,8 @@
     ./himalaya.nix
     ./gtk.nix
     ./sway.nix
-    ./waybar.nix
+    ./dunst.nix
     ./luakit.nix
   ];
-  home.packages = with pkgs; [ gcc rustc cargo rustPackages.clippy ];
+  home.packages = with pkgs; [ gcc rustc cargo rustPackages.clippy thokr ];
 }

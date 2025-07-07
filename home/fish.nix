@@ -73,6 +73,7 @@
           else
               set_color ${colors.red}
           end
+          echo " "
           echo -n "λ "
           set_color normal
       end

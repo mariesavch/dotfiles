@@ -34,7 +34,7 @@ settings.window.new_window_size = "1800x1400"
 settings.webview.zoom_level = 120
 settings.webview.enable_smooth_scrolling = true
 settings.application.enable_pdfjs = false
-settings.webview.enable_javascript = true
+settings.application.prefer_dark_mode = true
 
 modes.add_binds("normal", {
 	{

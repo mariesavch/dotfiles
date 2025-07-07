@@ -237,7 +237,7 @@ return {
       condition = function()
         return conditions.buffer_not_empty() and conditions.buffer_not_term()
       end,
-      hl = { bg = colors.mantle, fg = colors.surface2 },
+      hl = { bg = colors.mantle, fg = colors.overlay0 },
     }
 
     local LspProgress = {
@@ -254,7 +254,7 @@ return {
           vim.cmd("redrawstatus")
         end),
       },
-      hl = { bg = colors.mantle, fg = colors.surface2, bold = true, italic = false },
+      hl = { bg = colors.mantle, fg = colors.overlay0, bold = true, italic = false },
     }
 
     local Diagnostics = {
