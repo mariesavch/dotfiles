@@ -34,7 +34,6 @@
       nr = "sudo nixos-rebuild switch --flake ~/.dotfiles#kitaro";
       ll = "${lib.getExe pkgs.eza} --icons -l -s type -a --git";
       ls = "${lib.getExe pkgs.eza} --icons -s type -a --git";
-      bt = "${lib.getExe pkgs.bluetui}";
       ff = "${lib.getExe pkgs.fastfetch} -c neofetch.jsonc";
       c = "clear";
       g = "git";

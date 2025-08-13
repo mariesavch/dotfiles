@@ -24,8 +24,8 @@ local colors = {
 	surface2 = "#4f4f4f",
 	surface1 = "#383838",
 	surface0 = "#2e2e2e",
-	base = "#161616",
-	mantle = "#0d0d0d",
+	base = "#000000",
+	mantle = "#000000",
 	crust = "#000000",
 }
 

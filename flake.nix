@@ -2,7 +2,8 @@
   description = "Nix Environment";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs";
+    nixpkgs.url =
+      "github:nixos/nixpkgs/e2000273f2bb4ea10724aad6f2c1d27f0a1669a2";
 
     nixos-apple-silicon = {
       url = "github:nix-community/nixos-apple-silicon";
@@ -43,8 +44,8 @@
         surface2 = "4f4f4f";
         surface1 = "383838";
         surface0 = "2e2e2e";
-        base = "161616";
-        mantle = "0d0d0d";
+        base = "000000";
+        mantle = "000000";
         crust = "000000";
       };
     in {

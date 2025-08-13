@@ -64,10 +64,23 @@
         "XF86MonBrightnessUp" =
           "exec ${pkgs.brightness}/bin/brightness set 5%+";
 
+        "Alt+XF86AudioLowerVolume" =
+          "exec ${pkgs.brightness}/bin/brightness set 5%-";
+        "Alt+XF86AudioRaiseVolume" =
+          "exec ${pkgs.brightness}/bin/brightness set 5%+";
+
+        "${mod}+Alt+XF86AudioLowerVolume" =
+          "exec ${pkgs.brightness}/bin/brightness set 1%-";
+        "${mod}+Alt+XF86AudioRaiseVolume" =
+          "exec ${pkgs.brightness}/bin/brightness set 1%+";
+
         "${mod}+XF86MonBrightnessDown" =
           "exec ${pkgs.brightness}/bin/brightness set 1%-";
         "${mod}+XF86MonBrightnessUp" =
           "exec ${pkgs.brightness}/bin/brightness set 1%+";
+
+        "Alt+XF86AudioMute" = "exec systemctl suspend";
+        "${mod}+XF86AudioMute" = "exec ${lib.getExe pkgs.playerctl} play-pause";
 
         "${mod}+q" = "kill";
         "${mod}+r" = ''mode "resize"'';

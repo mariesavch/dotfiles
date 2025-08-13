@@ -13,10 +13,8 @@
       peripheralFirmwareDirectory = ./firmware;
       useExperimentalGPUDriver = true;
       setupAsahiSound = true;
-      withRust = true;
     };
     graphics.enable = true;
-    bluetooth.enable = true;
   };
 
   boot = {

@@ -31,8 +31,8 @@ return {
           surface2 = "#4f4f4f",
           surface1 = "#383838",
           surface0 = "#2e2e2e",
-          base = "#161616",
-          mantle = "#0d0d0d",
+          base = "#000000",
+          mantle = "#000000",
           crust = "#000000",
         },
       },
@@ -69,6 +69,8 @@ return {
       },
       highlight_overrides = {
         all = function(colors)
+          local options = require("catppuccin").options
+
           return {
             NormalFloat = { bg = colors.mantle },
             FloatBorder = { bg = colors.mantle, fg = colors.mantle },
@@ -87,20 +89,20 @@ return {
             HighlightRedo = { bg = colors.teal, fg = colors.base },
             Cursor = { fg = colors.base, bg = colors.overlay0 },
 
-            TelescopeSelection = { bg = colors.surface0 },
+            TelescopeSelection = { bg = colors.surface0, fg = colors.text },
             TelescopePromptCounter = { fg = colors.mauve, style = { "bold" } },
 
-            TelescopePromptPrefix = { bg = colors.surface0 },
-            TelescopePromptNormal = { bg = colors.surface0 },
+            TelescopePromptPrefix = { bg = colors.mantle, fg = colors.mauve },
+            TelescopePromptNormal = { bg = colors.mantle },
             TelescopeResultsNormal = { bg = colors.mantle },
             TelescopePreviewNormal = { bg = colors.crust },
 
-            TelescopePromptBorder = { bg = colors.surface0, fg = colors.surface0 },
+            TelescopePromptBorder = { bg = colors.mantle, fg = colors.mantle },
             TelescopeResultsBorder = { bg = colors.mantle, fg = colors.mantle },
             TelescopePreviewBorder = { bg = colors.crust, fg = colors.crust },
             TelescopePreviewMessage = { fg = colors.teal, style = { "italic" } },
 
-            TelescopePromptTitle = { fg = colors.surface0, bg = colors.surface0 },
+            TelescopePromptTitle = { fg = colors.mantle, bg = colors.mantle },
             TelescopeResultsTitle = { fg = colors.mantle, bg = colors.mantle },
             TelescopePreviewTitle = { fg = colors.crust, bg = colors.crust },
 
@@ -150,6 +152,35 @@ return {
             ["@tag.attribute"] = { fg = colors.mauve, style = { "italic" } },
             ["@tag.builtin.tsx"] = { fg = colors.mauve },
             ["@lsp.type.namespace.rust"] = { fg = colors.pink, style = { "bold" } },
+
+            ["@variable.member"] = { fg = colors.lavender },
+            ["@module"] = { fg = colors.lavender, style = options.styles.miscs or { "italic" } },
+            ["@string.special.url"] = { fg = colors.rosewater, style = { "italic", "underline" } },
+            ["@property"] = { fg = colors.lavender, style = options.styles.properties or {} },
+            ["@constructor"] = { fg = colors.sapphire },
+            ["@keyword.operator"] = { link = "Operator" },
+            ["@keyword.export"] = { fg = colors.sky, style = options.styles.keywords },
+            ["@markup.strong"] = { fg = colors.maroon, style = { "bold" } },
+            ["@markup.italic"] = { fg = colors.maroon, style = { "italic" } },
+            ["@markup.heading"] = { fg = colors.blue, style = { "bold" } },
+            ["@markup.quote"] = { fg = colors.maroon, style = { "bold" } },
+            ["@markup.link"] = { link = "Tag" },
+            ["@markup.link.label"] = { link = "Label" },
+            ["@markup.link.url"] = { fg = colors.rosewater, style = { "italic", "underline" } },
+            ["@markup.raw"] = { fg = colors.teal },
+            ["@markup.list"] = { link = "Special" },
+            ["@tag"] = { fg = colors.mauve },
+            ["@tag.delimiter"] = { fg = colors.sky },
+            ["@property.css"] = { fg = colors.lavender },
+            ["@property.id.css"] = { fg = colors.blue },
+            ["@type.tag.css"] = { fg = colors.mauve },
+            ["@string.plain.css"] = { fg = colors.peach },
+            ["@constructor.lua"] = { fg = colors.flamingo },
+            ["@property.typescript"] = { fg = colors.lavender, style = options.styles.properties or {} },
+            ["@constructor.typescript"] = { fg = colors.lavender },
+            ["@constructor.tsx"] = { fg = colors.lavender },
+            ["@type.builtin.c"] = { fg = colors.yellow, style = {} },
+            ["@type.builtin.cpp"] = { fg = colors.yellow, style = {} },
           }
         end,
       },

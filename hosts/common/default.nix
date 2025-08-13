@@ -39,6 +39,7 @@
     upower.enable = true;
     fstrim.enable = true;
     timesyncd.enable = true;
+    usbmuxd.enable = true;
   };
 
   boot.loader = {

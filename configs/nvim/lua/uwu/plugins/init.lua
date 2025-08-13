@@ -33,6 +33,7 @@ require("lazy").setup({
   { import = "uwu.plugins.neogit" },
   { import = "uwu.plugins.highlight-undo" },
   { import = "uwu.plugins.term-edit" },
+  { import = "uwu.plugins.minty" },
 }, {
   defaults = {
     lazy = true,
