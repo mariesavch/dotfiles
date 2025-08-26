@@ -11,7 +11,6 @@
   hardware = {
     asahi = {
       peripheralFirmwareDirectory = ./firmware;
-      useExperimentalGPUDriver = true;
       setupAsahiSound = true;
     };
     graphics.enable = true;
