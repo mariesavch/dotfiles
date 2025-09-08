@@ -14,8 +14,8 @@
       };
       input = {
         "type:keyboard" = {
-          xkb_layout = "us";
-          xkb_options = "ctrl:nocaps";
+          xkb_layout = "us,ru";
+          xkb_options = "ctrl:nocaps,grp:alt_space_toggle";
           repeat_delay = "200";
           repeat_rate = "30";
         };

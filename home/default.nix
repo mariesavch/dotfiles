@@ -10,5 +10,5 @@
     ./dunst.nix
     ./luakit.nix
   ];
-  home.packages = with pkgs; [ gcc rustc cargo rustPackages.clippy thokr ];
+  home.packages = with pkgs; [ airshipper gcc thokr ];
 }
