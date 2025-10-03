@@ -19,6 +19,8 @@
       }
     '';
     gtk2.configLocation = "/home/marie/.config/gtk-2.0/gtkrc";
+    gtk3.extraConfig.gtk-application-prefer-dark-theme = true;
+    gtk4.extraConfig.gtk-application-prefer-dark-theme = true;
   };
   home.pointerCursor = {
     name = "Simp1e-Dark";

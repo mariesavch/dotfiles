@@ -41,7 +41,7 @@
         "${mod}+Return" = "exec ${
             lib.getExe pkgs.neovide
           } -- --listen /tmp/nvim-$(date +%Y%m%d%H%M%S).pipe +term";
-        "${mod}+d" = "exec ${lib.getExe pkgs.luakit}";
+        "${mod}+d" = "exec firefox";
         "${mod}+n" = "exec ${pkgs.notifystatus}/bin/notifystatus";
 
         "XF86AudioMute" = "exec ${pkgs.volume}/bin/volume sset Master toggle";

@@ -8,7 +8,7 @@
     ./gtk.nix
     ./sway.nix
     ./dunst.nix
-    ./luakit.nix
+    ./firefox.nix
   ];
   home.packages = with pkgs; [ airshipper gcc thokr ];
 }
