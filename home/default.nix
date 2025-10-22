@@ -10,5 +10,5 @@
     ./dunst.nix
     ./firefox.nix
   ];
-  home.packages = with pkgs; [ airshipper gcc thokr ];
+  home.packages = with pkgs; [ krita gcc thokr ];
 }

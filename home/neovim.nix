@@ -8,9 +8,6 @@
     extraPackages = with pkgs; [
       stylua
       lua-language-server
-      rust-analyzer
-      rustfmt
-      taplo
       nil
       nixfmt-classic
       gnumake

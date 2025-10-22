@@ -996,6 +996,7 @@
           clearurls
           decentraleyes
           istilldontcareaboutcookies
+          stylus
         ];
     };
   };

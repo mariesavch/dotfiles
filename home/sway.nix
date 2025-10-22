@@ -1,12 +1,24 @@
 { pkgs, lib, colors, ... }: {
-  home.packages = with pkgs; [ wl-clipboard ];
+  home = {
+    packages = with pkgs; [ mpv wl-clipboard xdg-utils ];
+    sessionVariables = {
+      NIXOS_OZONE_WL = "1";
+      DISABLE_QT5_COMPAT = "0";
+      QT_QPA_PLATFORM = "wayland;xcb";
+      GDK_BACKEND = "wayland";
+      QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+      QT_QPA_PLATFORMTHEME = "qt5ct";
+      MOZ_ENABLE_WAYLAND = "1";
+      XDG_SESSION_TYPE = "wayland";
+      SDL_VIDEODRIVER = "wayland";
+      CLUTTER_BACKEND = "wayland";
+      XCURSOR_SIZE = "24";
+    };
+  };
   wayland.windowManager.sway = {
     enable = true;
     systemd.enable = true;
-    package = pkgs.sway-unwrapped.override {
-      enableXWayland = false;
-      trayEnabled = false;
-    };
+    package = pkgs.sway-unwrapped.override { trayEnabled = false; };
     config = {
       window = {
         titlebar = false;
@@ -43,6 +55,32 @@
           } -- --listen /tmp/nvim-$(date +%Y%m%d%H%M%S).pipe +term";
         "${mod}+d" = "exec firefox";
         "${mod}+n" = "exec ${pkgs.notifystatus}/bin/notifystatus";
+        "${mod}+i" = "exec krita";
+        "${mod}+o" = "exec ${lib.getExe pkgs.hyprpicker} -a -n";
+
+        "${mod}+p" = ''
+          exec ${lib.getExe pkgs.grim} -g "$(${
+            lib.getExe pkgs.slurp
+          } -b ${colors.mantle}80 -c 00000000)" -| wl-copy -t image/png && ${
+            lib.getExe pkgs.libnotify
+          } -a "screenshot captured" "copied" -t 888'';
+        "${mod}+Shift+p" = ''
+          exec ${lib.getExe pkgs.grim} -c - | wl-copy -t image/png  && ${
+            lib.getExe pkgs.libnotify
+          } -a "full screen captured" "copied" -t 888'';
+
+        "${mod}+Alt+p" = ''
+          exec ${lib.getExe pkgs.grim} -g "$(${
+            lib.getExe pkgs.slurp
+          } -b ${colors.mantle}80 -c 00000000)" ~/pictures/screenshots/$(date "+%Y%m%d"_"%Hh%Mm%Ss"_grim).png && ${
+            lib.getExe pkgs.libnotify
+          } -a "screenshot captured" "saved" -t 888'';
+        "${mod}+Shift+Alt+p" = ''
+          exec ${
+            lib.getExe pkgs.grim
+          } -c ~/pictures/screenshots/$(date "+%Y%m%d"_"%Hh%Mm%Ss"_grim).png && ${
+            lib.getExe pkgs.libnotify
+          } -a "full screen captured" "saved" -t 888'';
 
         "XF86AudioMute" = "exec ${pkgs.volume}/bin/volume sset Master toggle";
         "XF86AudioRaiseVolume" =
@@ -114,7 +152,7 @@
       };
       seat."*".hide_cursor = "when-typing enable";
       output = {
-        "*".bg = "#${colors.mantle} solid_color";
+        "*".bg = "#${colors.mauve} solid_color";
         "eDP-1".scale = "1";
       };
     };
